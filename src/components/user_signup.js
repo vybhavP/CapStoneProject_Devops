@@ -19,31 +19,31 @@ class UserSingup extends Component {
       <Form>
         <Form.Field>
           <label>First Name</label>
-          <input placeholder='First Name' type='text'/>
+          <input placeholder='First Name' type='text' />
         </Form.Field>
         <Form.Field>
           <label>Last Name</label>
-          <input placeholder='Last Name' type='text'/>
+          <input placeholder='Last Name' type='text' />
         </Form.Field>
         <Form.Field>
           <label>Password</label>
-          <input placeholder='Password' type='password'/>
+          <input placeholder='Password' type='password' />
         </Form.Field>
         <Form.Field>
           <label>Confirm Password</label>
-          <input placeholder='Confirm Password' type='password'/>
+          <input placeholder='Confirm Password' type='password' />
         </Form.Field>
         <Form.Field>
           <label>EmailID</label>
-          <input placeholder='Email' type='email'/>
+          <input placeholder='Email' type='email' />
         </Form.Field>
-	<Form.Select fluid label='Gender' options={options} placeholder='Gender' />
+        <Form.Select fluid label='Gender' options={options} placeholder='Gender' />
         {/* <Form.Field>
           <Checkbox label='I agree to the Terms and Conditions' />
         </Form.Field>
         <Button type='submit'>Submit</Button> */}
-	<Button type='submit' color='purple'>Signup</Button>
-	<Button type='reset' color='grey'>Reset</Button>
+        <Button type='submit' color='purple'>Signup</Button>
+        <Button type='reset' color='grey'>Reset</Button>
       </Form>
     )
   }

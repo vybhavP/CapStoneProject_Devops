@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input, Button } from 'semantic-ui-react'
 
 export default class SearchBar2 extends React.Component {
   handleChange() {
@@ -8,7 +9,7 @@ export default class SearchBar2 extends React.Component {
     return (
       <div>
 
-        <input type="text" placeholder="Search..." value={this.props.filterText} ref="filterTextInput" onChange={this.handleChange.bind(this)}/>
+        <Input type="text" placeholder="Search..." value={this.props.filterText} ref="filterTextInput" onChange={this.handleChange.bind(this)} />
 
       </div>
 

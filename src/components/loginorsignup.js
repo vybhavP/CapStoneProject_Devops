@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 const LoginOrSignup = () => (
     <Segment padded>
         <Link to="/user_login">
-        <Button color='green' fluid>Login</Button>            
+            <Button color='green' fluid>Login</Button>
         </Link>
         <Divider horizontal>Or</Divider>
         <Link to="/user_signup">
-        <Button color='olive' fluid>Sign Up Now</Button>
+            <Button color='olive' fluid>Sign Up Now</Button>
         </Link>
     </Segment>
 )
