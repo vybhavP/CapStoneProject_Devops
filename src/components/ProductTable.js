@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Table, Header, Segment } from 'semantic-ui-react';
+import { Button, Table } from 'semantic-ui-react';
 import ProductRow from './ProductRow';
 
 export default class ProductTable extends React.Component {

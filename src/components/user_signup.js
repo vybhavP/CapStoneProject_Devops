@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Checkbox } from 'semantic-ui-react'
+import { Form, Button } from 'semantic-ui-react'
 //import { countryOptions } from '../common'
 //countryOptions = [ { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' } ]
 
