@@ -19,7 +19,7 @@ export default class ProductTable2 extends React.Component {
       <div>
 
 
-        <div classNames="ui horizontal divider">
+        <div className="ui horizontal divider">
           Or
         </div>
         <Button primary onClick={this.props.onRowAdd} className="btn btn-success pull-right">Add</Button>

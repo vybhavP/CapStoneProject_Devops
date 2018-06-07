@@ -17,8 +17,10 @@ export default class ProductTable extends React.Component {
     return (
       <div>
 
-
-        <Button primary onClick={this.props.onRowAdd} className="btn btn-success pull-right">Add</Button>
+        <div className="ui horizontal divider">
+          Available Courses
+        </div>
+        {/* <Button primary onClick={this.props.onRowAdd} className="btn btn-success pull-right">Add</Button> */}
         <table className="table table-bordered">
           <thead>
             <tr>
