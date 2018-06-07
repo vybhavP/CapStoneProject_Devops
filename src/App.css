@@ -76,3 +76,7 @@
     background-color: #fcfcfa;
   }
 }
+
+input.placeholder {
+    text-align: center;
+}

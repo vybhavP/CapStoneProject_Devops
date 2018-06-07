@@ -9,8 +9,8 @@ export default class Products extends React.Component {
     super(props);
 
     //  this.state.products = [];
-    this.state = {};
-    this.state.filterText = "";
+    this.state = { filterText : "" };
+    //this.state.filterText = "";
     this.state.products = [
       {
         id: 1,
@@ -85,15 +85,13 @@ export default class Products extends React.Component {
     var newProducts = products.map(function (product) {
 
       for (var key in product) {
-        if (key == item.name && product.id == item.id) {
+        if (key === item.name && product.id === item.id) {
           product[key] = item.value;
-
         }
       }
       return product;
     });
     this.setState({ products: newProducts });
-    //  console.log(this.state.products);
   };
   render() {
     return (

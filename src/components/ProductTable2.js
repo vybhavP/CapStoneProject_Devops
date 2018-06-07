@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react';
-
+import { Button, Table } from 'semantic-ui-react';
 import ProductRow2 from './ProductRow2';
 
 export default class ProductTable2 extends React.Component {
@@ -17,27 +16,23 @@ export default class ProductTable2 extends React.Component {
     });
     return (
       <div>
-
-
-        <div className="ui horizontal divider">
+        {/*<div className="ui horizontal divider">
           Or
-        </div>
-        <Button primary onClick={this.props.onRowAdd} className="btn btn-success pull-right">Add</Button>
-        <table className="table table-bordered center">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>price</th>
-              <th>quantity</th>
-              <th>category</th>
-            </tr>
-          </thead>
-
-          <tbody>
+        </div>*/}
+        <Table celled>
+          <Table.Header>
+	      <Table.Row textAlign='center'>
+		<Table.HeaderCell>Name</Table.HeaderCell>
+		<Table.HeaderCell>price</Table.HeaderCell>
+		<Table.HeaderCell>quantity</Table.HeaderCell>
+		<Table.HeaderCell>category</Table.HeaderCell>
+	      </Table.Row>
+	    </Table.Header>
+          <Table.Body>
             {product}
-          </tbody>
-
-        </table>
+          </Table.Body>
+        </Table>
+        <Button primary onClick={this.props.onRowAdd} className="btn btn-success pull-right">Add</Button>
       </div>
     );
   }

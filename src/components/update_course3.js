@@ -7,7 +7,7 @@ export default class UpdateCourse extends React.Component {
 	render() {
 		return (
 			<div> update course
-				<Products />
+				<Products3 />
 			</div>
 
 		)

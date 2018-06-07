@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SearchBar3 from './SearchBar3';
+import SearchBar from './SearchBar';
 import ProductTable3 from './ProductTable3';
 
 export default class Products3 extends React.Component {
@@ -85,20 +85,18 @@ export default class Products3 extends React.Component {
     var newProducts = products.map(function (product) {
 
       for (var key in product) {
-        if (key == item.name && product.id == item.id) {
+        if (key === item.name && product.id === item.id) {
           product[key] = item.value;
-
         }
       }
       return product;
     });
     this.setState({ products: newProducts });
-    //  console.log(this.state.products);
   };
   render() {
     return (
       <div>
-        <SearchBar3 filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />
+        <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />
         <ProductTable3 onProductTableUpdate={this.handleProductTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} products={this.state.products} filterText={this.state.filterText} />
       </div>
     );

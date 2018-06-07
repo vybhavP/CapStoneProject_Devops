@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Table } from 'semantic-ui-react';
 import EditableCell2 from './EditableCell2';
 
 export default class ProductRow2 extends React.Component {
@@ -10,7 +10,7 @@ export default class ProductRow2 extends React.Component {
   render() {
 
     return (
-      <tr className="eachRow">
+      <Table.Row className="eachRow">
         <EditableCell2 onProductTableUpdate={this.props.onProductTableUpdate} cellData={{
           "type": "name",
           value: this.props.product.name,
@@ -31,7 +31,7 @@ export default class ProductRow2 extends React.Component {
           value: this.props.product.category,
           id: this.props.product.id
         }} />
-      </tr>
+      </Table.Row>
     );
 
   }
