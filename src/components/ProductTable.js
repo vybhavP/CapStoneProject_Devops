@@ -33,7 +33,7 @@ export default class ProductTable extends React.Component {
             {product}
           </Table.Body>       
         </Table>
-	<Button color="green" className="btn btn-success pull-right" center>Update</Button>
+	<Button color="green" className="btn btn-success pull-right">Update</Button>
       </div>
     );
   }
