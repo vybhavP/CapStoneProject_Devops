@@ -33,6 +33,7 @@ export default class ProductTable2 extends React.Component {
           </Table.Body>
         </Table>
         <Button primary onClick={this.props.onRowAdd} className="btn btn-success pull-right">Add</Button>
+        <Button primary onClick={this.props.onSave} className="btn btn-success pull-right">Save</Button>
       </div>
     );
   }

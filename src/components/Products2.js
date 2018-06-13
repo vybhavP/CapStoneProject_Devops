@@ -34,7 +34,10 @@ export default class Products2 extends React.Component {
     this.state.products.push(product);
     this.setState(this.state.products);
   }
-
+  
+  handleSave(evt) {
+    alert("triggered handle save function");
+  }
   handleProductTable(evt) {
     var item = {
       id: evt.target.id,
@@ -57,7 +60,7 @@ export default class Products2 extends React.Component {
     return (
       <div>
         <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />
-        <ProductTable2 onProductTableUpdate={this.handleProductTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} products={this.state.products} filterText={this.state.filterText} />
+        <ProductTable2 onProductTableUpdate={this.handleProductTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} products={this.state.products} filterText={this.state.filterText} onSave={this.handleSave.bind(this)} />
       </div>
     );
   }

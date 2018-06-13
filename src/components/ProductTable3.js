@@ -7,12 +7,13 @@ export default class ProductTable3 extends React.Component {
   render() {
     var onProductTableUpdate = this.props.onProductTableUpdate;
     var rowDel = this.props.onRowDel;
+    var isSaveEnabled = this.props.enableSave;
     var filterText = this.props.filterText;
     var product = this.props.products.map(function (product) {
       if (product.name.indexOf(filterText) === -1) {
         return;
       }
-      return (<ProductRow3 onProductTableUpdate={onProductTableUpdate} product={product} onDelEvent={rowDel.bind(this)} key={product.id} />)
+      return (<ProductRow3 onProductTableUpdate={onProductTableUpdate} product={product} onDelEvent={rowDel.bind(this)} key={product.id} enableSave={isSaveEnabled}/>)
     });
     return (
       <div>

@@ -6,7 +6,7 @@ import EditableCell3 from './EditableCell3';
 export default class ProductRow3 extends React.Component {
   onDelEvent() {
     this.props.onDelEvent(this.props.product);
-    console.log(this.props.product);
+    alert(this.props.enableSave);
   }
   render() {
     return (

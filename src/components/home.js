@@ -1,11 +1,17 @@
 import React from 'react';
+import { Header, Segment } from 'semantic-ui-react';
+
 import '../App.css'
-import React_Image from '../images/react2.jpg';
+import CourseManagementSystem from '../images/course-management-system.jpg';
 
 const Home = () => (
   <div>
-    <h2>Home component</h2>
-    <img src={React_Image} alt="react_image" className="home_page_image" />
+	<Segment>
+	    <Header as='h1' textAlign='center'>
+	      Welcome !!!
+	    </Header>
+	</Segment>
+    	<img src={CourseManagementSystem} alt="CourseManagementSystem" className="home_page_image" />
   </div>
 );
 

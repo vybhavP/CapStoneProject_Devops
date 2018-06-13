@@ -9,7 +9,7 @@ export default class Products3 extends React.Component {
     super(props);
 
     //  this.state.products = [];
-    this.state = {};
+    this.state = { isDeleted: false };
     this.state.filterText = "";
     this.state.products = [
       {
@@ -59,6 +59,9 @@ export default class Products3 extends React.Component {
     var index = this.state.products.indexOf(product);
     this.state.products.splice(index, 1);
     this.setState(this.state.products);
+    alert("before delete"+ this.state.isDeleted);
+    this.setState({isDeleted: true})
+    alert("after delete"+ this.state.isDeleted);
   };
 
   handleAddEvent(evt) {
@@ -97,7 +100,7 @@ export default class Products3 extends React.Component {
     return (
       <div>
         <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />
-        <ProductTable3 onProductTableUpdate={this.handleProductTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} products={this.state.products} filterText={this.state.filterText} />
+        <ProductTable3 onProductTableUpdate={this.handleProductTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} products={this.state.products} filterText={this.state.filterText} enableSave={this.state.isDeleted} />
       </div>
     );
   }
