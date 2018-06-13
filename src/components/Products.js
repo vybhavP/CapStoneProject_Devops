@@ -9,8 +9,8 @@ export default class Products extends React.Component {
     super(props);
 
     //  this.state.products = [];
-    this.state = { filterText : "" };
-    //this.state.filterText = "";
+    this.state = {};
+    this.state.filterText = "";
     this.state.products = [
       {
         id: 1,
@@ -53,7 +53,7 @@ export default class Products extends React.Component {
 
   }
   handleUserInput(filterText) {
-    this.setState({ filterText: filterText });
+    this.setState({filterText: filterText});
   };
   handleRowDel(product) {
     var index = this.state.products.indexOf(product);
@@ -81,24 +81,28 @@ export default class Products extends React.Component {
       name: evt.target.name,
       value: evt.target.value
     };
-    var products = this.state.products.slice();
-    var newProducts = products.map(function (product) {
+var products = this.state.products.slice();
+  var newProducts = products.map(function(product) {
 
-      for (var key in product) {
-        if (key === item.name && product.id === item.id) {
-          product[key] = item.value;
-        }
+    for (var key in product) {
+      if (key == item.name && product.id == item.id) {
+        product[key] = item.value;
+
       }
-      return product;
-    });
-    this.setState({ products: newProducts });
+    }
+    return product;
+  });
+    this.setState({products:newProducts});
+  //  console.log(this.state.products);
   };
   render() {
+
     return (
       <div>
-        <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />
-        <ProductTable onProductTableUpdate={this.handleProductTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} products={this.state.products} filterText={this.state.filterText} />
+        <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)}/>
+        <ProductTable onProductTableUpdate={this.handleProductTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} products={this.state.products} filterText={this.state.filterText}/>
       </div>
     );
+
   }
 }
