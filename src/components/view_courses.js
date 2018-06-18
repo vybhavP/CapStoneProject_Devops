@@ -64,6 +64,8 @@ export default class ViewCourses extends React.Component {
 						<Table.Row>
 							<Table.HeaderCell>S.No</Table.HeaderCell>
 							<Table.HeaderCell singleLine>Course Name</Table.HeaderCell>
+							<Table.HeaderCell singleLine>Price</Table.HeaderCell>
+							<Table.HeaderCell singleLine>Category</Table.HeaderCell>
 							<Table.HeaderCell>Course Description</Table.HeaderCell>
 						</Table.Row>
 					</Table.Header>
@@ -71,37 +73,61 @@ export default class ViewCourses extends React.Component {
 					<Table.Body>
 						<Table.Row>
 							<Table.Cell>
-								<Label ribbon>1</Label>
+								1
 							</Table.Cell>
 							<Table.Cell>
-								<Label ribbon>ReactJS</Label>
+								ReactJS
+							</Table.Cell>
+							<Table.Cell>
+								<Label ribbon>Rs.1000</Label>
+							</Table.Cell>
+							<Table.Cell>
+								FrontEnd
 							</Table.Cell>
 							<Table.Cell>React is a JavaScript library for building user interfaces. It is maintained by Facebook, Instagram and a community 			of individual developers and corporations.</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Label ribbon>2</Label>
+								2
 							</Table.Cell>
 							<Table.Cell>
-								<Label ribbon>ExpressJS</Label>
+								ExpressJS
+							</Table.Cell>
+							<Table.Cell>
+								<Label ribbon>Rs.1000</Label>
+							</Table.Cell>
+							<Table.Cell>
+								Middleware
 							</Table.Cell>
 							<Table.Cell>Express.js is a framework used for Node and it is most commonly used as a web application for node js. Express is 				just a module framework for Node that you can use for applications that are based on server/s that will "listen" for 				any input/connection requests from clients.</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Label ribbon>3</Label>
+								3
 							</Table.Cell>
 							<Table.Cell>
-								<Label ribbon>NodeJS</Label>
+								NodeJS
+							</Table.Cell>
+							<Table.Cell>
+								<Label ribbon>Rs.1000</Label>
+							</Table.Cell>
+							<Table.Cell>
+								Backend
 							</Table.Cell>
 							<Table.Cell>Node.js is a JavaScript runtime built on Chrome s V8 JavaScript engine. Node.js uses an event-driven, 'non-blocking' 				I/O model that makes it lightweight and efficient. npm is a Node.js package of open source library which is largest in 				the world.</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Label ribbon>4</Label>
+								4
 							</Table.Cell>
 							<Table.Cell>
-								<Label ribbon>MongoDB</Label>
+								MongoDB
+							</Table.Cell>
+							<Table.Cell>
+								<Label ribbon>Rs.1000</Label>
+							</Table.Cell>
+							<Table.Cell>
+								Database
 							</Table.Cell>
 							<Table.Cell>MongoDB is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database 			program, MongoDB uses JSON-like documents with schemas.</Table.Cell>
 						</Table.Row>

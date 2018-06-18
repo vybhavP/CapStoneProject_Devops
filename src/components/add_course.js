@@ -3,7 +3,7 @@ import { Header, Segment } from 'semantic-ui-react';
 
 import '../App.css';
 
-import Products2 from './Products2'
+import AddCourses from './AddCourses'
 const AddCourse = () => (
     <div>
 	<Segment>
@@ -11,7 +11,7 @@ const AddCourse = () => (
 	      Add your courses
 	    </Header>
 	</Segment>
-        <Products2 />
+        <AddCourses />
     </div>
 );
 
