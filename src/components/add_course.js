@@ -2,8 +2,8 @@ import React from 'react';
 import { Header, Segment } from 'semantic-ui-react';
 
 import '../App.css';
+import AddCourses from './AddCourses';
 
-import AddCourses from './AddCourses'
 const AddCourse = () => (
     <div>
 	<Segment>

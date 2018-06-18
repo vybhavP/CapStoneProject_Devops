@@ -19,14 +19,14 @@ export default class Login extends React.Component {
 
   handleAdminFormSubmit(event) {
     if (this.state.username === "vybhav" && this.state.password === "vybhav") {
-      this.props.history.push('/user_home')
-      this.setState({ isLoginFailed: false })
-      console.log("isLoginFailed success: " + this.state.isLoginFailed)
+      this.props.history.push('/user_home');
+      this.setState({ isLoginFailed: false });
+      console.log("isLoginFailed success: " + this.state.isLoginFailed);
     }
     else {
-      this.props.history.push('/user_login')
-      this.setState({ isLoginFailed: true })
-      console.log("isLoginFailed failed: " + this.state.isLoginFailed)
+      this.props.history.push('/user_login');
+      this.setState({ isLoginFailed: true });
+      console.log("isLoginFailed failed: " + this.state.isLoginFailed);
     }
   }
 

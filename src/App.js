@@ -11,7 +11,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Home from './components/home';
 import About from './components/about';
-import Topics from './components/topics';
 import LoginOrSignup from './components/loginorsignup';
 import UserLogin from './components/user_login';
 import UserSignup from './components/user_signup';
@@ -36,18 +35,14 @@ class App extends Component {
         <li>
           <Link to="/login">Login or Signup</Link>
         </li>
-        {/* <li>
+        <li>
           <Link to="/about">About</Link>
         </li>
-        <li>
-          <Link to="/topics">Topics</Link>
-        </li> */}
       </ul>
       <hr />
       <Route exact path="/" component={Home} />
       <Route exact path="/login" component={LoginOrSignup} />
       <Route path="/about" component={About} />
-      <Route path="/topics" component={Topics} />
       <Route path="/user_login" component={UserLogin} />
       <Route path="/user_signup" component={UserSignup} />
       <Route path="/user_home" component={UserHome} />

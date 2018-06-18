@@ -8,6 +8,7 @@ export default class AddCourses extends React.Component {
   constructor(props) {
     super(props);
 
+    //  this.state.products = [];
     this.state = {};
     this.state.filterText = "";
     this.state.products = [];
@@ -36,24 +37,16 @@ export default class AddCourses extends React.Component {
   
   handleSave(evt) {
     alert("triggered handle save function");
-    console.log(this.state.products)
-    var products = this.state.products.slice();
-    for(var i = 0; i< products.length; i++){
-	console.log(products[i].id + "\n" + products[i].name + "\n" + 
-	products[i].price + "\n" + products[i].category + "\n" + products[i].description);
-    }
   }
   handleProductTable(evt) {
     var item = {
       id: evt.target.id,
       name: evt.target.name,
-      value: evt.target.value,
+      value: evt.target.value
     };
-    console.log(evt)
     var products = this.state.products.slice();
-    //console.log(products+" Products")
     var newProducts = products.map(function (product) {
-      console.log(product+"1234")
+      console.log(product)
       for (var key in product) {
         if (key === item.name && product.id === item.id) {
           product[key] = item.value;

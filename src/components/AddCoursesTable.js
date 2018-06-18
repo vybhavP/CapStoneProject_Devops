@@ -6,11 +6,11 @@ export default class AddCoursesTable extends React.Component {
 
   render() {
     var onProductTableUpdate = this.props.onProductTableUpdate;
-    var rowDel = this.props.onRowDel;
+    //var rowDel = this.props.onRowDel;
     var filterText = this.props.filterText;
     var product = this.props.products.map(function (product) {
       if (product.name.indexOf(filterText) === -1) {
-        return;
+        return false	;
       }
       return (<AddCoursesRow onProductTableUpdate={onProductTableUpdate} product={product} key={product.id} />)
     });

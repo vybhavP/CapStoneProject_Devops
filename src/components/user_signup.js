@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Button } from 'semantic-ui-react';
 
-const options = [
-  { key: 'm', text: 'Male', value: 'male' },
-  { key: 'f', text: 'Female', value: 'female' },
-]
-
 class UserSingup extends Component {
   constructor(props) {
     super(props);
@@ -51,7 +46,8 @@ class UserSingup extends Component {
 	alert("Password and confirm passwords should match")
     }
     else{
-	alert("signed up successfully");
+	alert("Signedup successfully \n" + this.state.firstname + "\n" + this.state.lastname + "\n" + this.state.password + "\n" + this.state.confirmPassword + "\n" + this.state.email);
+	this.props.history.push('/user_login')
     }
   }
 
@@ -84,10 +80,7 @@ class UserSingup extends Component {
           <input placeholder='Email' type='email' name="email" value={this.state.email} ref="userName" onChange={this.handleEmailChange.bind(this)} minLength= "5" maxLength= "30" required/>
         </Form.Field>
         {/*<Form.Select fluid label='Gender' options={options} placeholder='Gender' onChange={ this.handleGender.bind(this) }/>*/}
-        {/* <Form.Field>
-          <Checkbox label='I agree to the Terms and Conditions' />
-        </Form.Field>
-        <Button type='submit'>Submit</Button> */}
+        {/* <Button type='submit'>Submit</Button> */}
         <Button type='submit' color='purple'>Signup</Button>
           <Button type='reset' ref="resetButton" onClick={this.clearFormValues.bind(this)} color='grey'>Reset</Button>
       </Form>

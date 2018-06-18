@@ -2,10 +2,10 @@ import React from 'react';
 import { Header, Segment } from 'semantic-ui-react';
 
 import '../App.css'
-import Products from './Products';
+import UpdateCourses from './UpdateCourses';
 
 
-export default class UpdateCourse extends React.Component {
+export default class update_course extends React.Component {
 	render() {
 		return (
 			<div> 
@@ -14,7 +14,7 @@ export default class UpdateCourse extends React.Component {
 				      Update your courses
 				    </Header>
 				</Segment>
-				<Products />
+				<UpdateCourses />
 			</div>
 
 		)

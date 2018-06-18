@@ -2,13 +2,14 @@ import React from 'react';
 import { Label, Table, Header, Segment } from 'semantic-ui-react';
 import '../App.css'
 
+import courses from '../courses.json';
+
 export default class ViewCourses extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {};
 		this.state.filterText = "";
-		this.state.products = [];
 	}
 	handleUserInput(filterText) {
 		this.setState({ filterText: filterText });
@@ -50,7 +51,15 @@ export default class ViewCourses extends React.Component {
 		});
 		this.setState({ products: newProducts });
 	};
+
 	render() {
+		const coursesList = courses.courses;
+		//console.log(coursesList);
+		for(var i=0;i<coursesList.length;i++){
+			console.log(coursesList[i].name + "\n")
+		}
+		//let data = JSON.parse(courses)
+		//console.log("data from data.js is ::: " + data.courses);
 		return (
 			<div>
 				<Segment>
