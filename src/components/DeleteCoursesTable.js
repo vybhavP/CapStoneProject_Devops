@@ -1,25 +1,22 @@
 import React from 'react';
-import { Button, Table } from 'semantic-ui-react';
-import UpdateCoursesRow from './UpdateCoursesRow';
+import { Table } from 'semantic-ui-react';
 
-export default class UpdateCoursesTable extends React.Component {
+import DeleteCoursesRow from './DeleteCoursesRow';
+export default class DeleteCoursesTable extends React.Component {
 
   render() {
-    var onUpdateCoursesTableUpdate = this.props.onUpdateCoursesTableUpdate;
+    var onDeleteCoursesTableUpdate = this.props.onDeleteCoursesTableUpdate;
     var rowDel = this.props.onRowDel;
+    var isSaveEnabled = this.props.enableSave;
     var filterText = this.props.filterText;
     var course = this.props.courses.map(function (course) {
       if (course.name.indexOf(filterText) === -1) {
         return false;
       }
-      return (<UpdateCoursesRow onUpdateCoursesTableUpdate={onUpdateCoursesTableUpdate} course={course} onDelEvent={rowDel.bind(this)} key={course.id} />)
+      return (<DeleteCoursesRow onDeleteCoursesTableUpdate={onDeleteCoursesTableUpdate} course={course} onDelEvent={rowDel.bind(this)} key={course.id} enableSave={isSaveEnabled}/>)
     });
     return (
       <div>
-
-        {/*<div className="ui horizontal divider">
-          Available Courses
-        </div>*/}
         <Table celled>
           <Table.Header>
 	      <Table.Row textAlign='center'>
@@ -27,13 +24,13 @@ export default class UpdateCoursesTable extends React.Component {
 		<Table.HeaderCell>price</Table.HeaderCell>
 		<Table.HeaderCell>quantity</Table.HeaderCell>
 		<Table.HeaderCell>category</Table.HeaderCell>
+		<Table.HeaderCell>Delete?</Table.HeaderCell>
 	      </Table.Row>
 	    </Table.Header>
           <Table.Body>
             {course}
-          </Table.Body>       
+          </Table.Body>
         </Table>
-	<Button color="green" className="btn btn-success pull-right">Update</Button>
       </div>
     );
   }

@@ -10,64 +10,64 @@ export default class AddCourses extends React.Component {
 
     this.state = {};
     this.state.filterText = "";
-    this.state.products = [];
+    this.state.courses = [];
   }
   handleUserInput(filterText) {
     this.setState({ filterText: filterText });
   };
-  handleRowDel(product) {
-    var index = this.state.products.indexOf(product);
-    this.state.products.splice(index, 1);
-    this.setState(this.state.products);
+  handleRowDel(course) {
+    var index = this.state.courses.indexOf(course);
+    this.state.courses.splice(index, 1);
+    this.setState(this.state.courses);
   };
 
   handleAddEvent(evt) {
     var id = (+ new Date() + Math.floor(Math.random() * 999999)).toString(36);
-    var product = {
+    var course = {
       id: id,
       name: "",
       price: "0",
       category: "",
       description: ""
     }
-    this.state.products.push(product);
-    this.setState(this.state.products);
+    this.state.courses.push(course);
+    this.setState(this.state.courses);
   }
   
   handleSave(evt) {
     alert("triggered handle save function");
-    console.log(this.state.products)
-    var products = this.state.products.slice();
-    for(var i = 0; i< products.length; i++){
-	console.log(products[i].id + "\n" + products[i].name + "\n" + 
-	products[i].price + "\n" + products[i].category + "\n" + products[i].description);
+    console.log(this.state.courses)
+    var courses = this.state.courses.slice();
+    for(var i = 0; i< courses.length; i++){
+	console.log(courses[i].id + "\n" + courses[i].name + "\n" + 
+	courses[i].price + "\n" + courses[i].category + "\n" + courses[i].description);
     }
   }
-  handleProductTable(evt) {
+  handleAddCoursesTable(evt) {
     var item = {
       id: evt.target.id,
       name: evt.target.name,
       value: evt.target.value,
     };
     console.log(evt)
-    var products = this.state.products.slice();
-    //console.log(products+" Products")
-    var newProducts = products.map(function (product) {
-      console.log(product+"1234")
-      for (var key in product) {
-        if (key === item.name && product.id === item.id) {
-          product[key] = item.value;
+    var courses = this.state.courses.slice();
+    //console.log(courses+" courses")
+    var newCourses = courses.map(function (course) {
+      console.log(course+"1234")
+      for (var key in course) {
+        if (key === item.name && course.id === item.id) {
+          course[key] = item.value;
         }
       }
-      return product;
+      return course;
     });
-    this.setState({ products: newProducts });
+    this.setState({ courses: newCourses });
   };
   render() {
     return (
       <div>
         <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />
-        <AddCoursesTable onProductTableUpdate={this.handleProductTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} products={this.state.products} filterText={this.state.filterText} onSave={this.handleSave.bind(this)} />
+        <AddCoursesTable onAddCoursesTableUpdate={this.handleAddCoursesTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} courses={this.state.courses} filterText={this.state.filterText} onSave={this.handleSave.bind(this)} />
       </div>
     );
   }

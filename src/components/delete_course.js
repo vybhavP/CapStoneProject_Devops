@@ -2,7 +2,7 @@ import React from 'react';
 import { Header, Segment } from 'semantic-ui-react';
 
 import '../App.css';
-import Products3 from './Products3';
+import DeleteCourses from './DeleteCourses';
 
 const DeleteCourse = () => (
     <div>
@@ -11,7 +11,7 @@ const DeleteCourse = () => (
 	      Delete your courses
 	    </Header>
 	</Segment>
-        <Products3 />
+        <DeleteCourses />
     </div>
 );
 

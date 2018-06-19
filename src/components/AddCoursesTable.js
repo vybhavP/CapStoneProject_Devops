@@ -5,14 +5,14 @@ import AddCoursesRow from './AddCoursesRow';
 export default class AddCoursesTable extends React.Component {
 
   render() {
-    var onProductTableUpdate = this.props.onProductTableUpdate;
+    var onAddCoursesTableUpdate = this.props.onAddCoursesTableUpdate;
     //var rowDel = this.props.onRowDel;
     var filterText = this.props.filterText;
-    var product = this.props.products.map(function (product) {
-      if (product.name.indexOf(filterText) === -1) {
+    var course = this.props.courses.map(function (course) {
+      if (course.name.indexOf(filterText) === -1) {
         return false	;
       }
-      return (<AddCoursesRow onProductTableUpdate={onProductTableUpdate} product={product} key={product.id} />)
+      return (<AddCoursesRow onAddCoursesTableUpdate={onAddCoursesTableUpdate} course={course} key={course.id} />)
     });
     return (
       <div>
@@ -29,7 +29,7 @@ export default class AddCoursesTable extends React.Component {
 	      </Table.Row>
 	    </Table.Header>
           <Table.Body>
-            {product}
+            {course}
           </Table.Body>
         </Table>
         <Button primary onClick={this.props.onRowAdd} className="btn btn-success pull-right">Add</Button>

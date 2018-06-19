@@ -1,15 +1,15 @@
 import React from 'react';
 
 import SearchBar from './SearchBar';
-import UpdateCoursesTable from './UpdateCoursesTable';
+import DeleteCoursesTable from './DeleteCoursesTable';
 
-export default class UpdateCourses extends React.Component {
+export default class DeleteCourses extends React.Component {
 
   constructor(props) {
     super(props);
 
     //  this.state.courses = [];
-    this.state = {};
+    this.state = { isDeleted: false };
     this.state.filterText = "";
     this.state.courses = [
       {
@@ -53,12 +53,15 @@ export default class UpdateCourses extends React.Component {
 
   }
   handleUserInput(filterText) {
-    this.setState({filterText: filterText});
+    this.setState({ filterText: filterText });
   };
   handleRowDel(course) {
     var index = this.state.courses.indexOf(course);
     this.state.courses.splice(index, 1);
     this.setState(this.state.courses);
+    alert("before delete"+ this.state.isDeleted);
+    this.setState({isDeleted: true})
+    alert("after delete"+ this.state.isDeleted);
   };
 
   handleAddEvent(evt) {
@@ -75,34 +78,30 @@ export default class UpdateCourses extends React.Component {
 
   }
 
-  handleUpdateCoursesTable(evt) {
+  handleDeleteCoursesTable(evt) {
     var item = {
       id: evt.target.id,
       name: evt.target.name,
       value: evt.target.value
     };
-var courses = this.state.courses.slice();
-  var newCourses = courses.map(function(course) {
+    var courses = this.state.courses.slice();
+    var newCourses = courses.map(function (course) {
 
-    for (var key in course) {
-      if (key === item.name && course.id === item.id) {
-        course[key] = item.value;
-
+      for (var key in course) {
+        if (key === item.name && course.id === item.id) {
+          course[key] = item.value;
+        }
       }
-    }
-    return course;
-  });
-    this.setState({courses:newCourses});
-  //  console.log(this.state.courses);
+      return course;
+    });
+    this.setState({ courses: newCourses });
   };
   render() {
-
     return (
       <div>
-        <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)}/>
-        <UpdateCoursesTable onUpdateCoursesTableUpdate={this.handleUpdateCoursesTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} courses={this.state.courses} filterText={this.state.filterText}/>
+        <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />
+        <DeleteCoursesTable onDeleteCoursesTableUpdate={this.handleDeleteCoursesTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} courses={this.state.courses} filterText={this.state.filterText} enableSave={this.state.isDeleted} />
       </div>
     );
-
   }
 }
