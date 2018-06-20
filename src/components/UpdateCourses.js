@@ -14,41 +14,46 @@ export default class UpdateCourses extends React.Component {
     this.state.courses = [
       {
         id: 1,
-        category: 'Sporting Goods',
-        price: '49.99',
-        qty: 12,
-        name: 'football'
-      }, {
+        category: 'Front End',
+        price: '100',
+        description: "description of react",
+        name: 'reactJS'
+      },
+      {
         id: 2,
-        category: 'Sporting Goods',
-        price: '9.99',
-        qty: 15,
-        name: 'baseball'
-      }, {
+        category: 'Front End',
+        price: '100',
+        description: "description of react",
+        name: 'reactJS'
+      },
+      {
         id: 3,
-        category: 'Sporting Goods',
-        price: '29.99',
-        qty: 14,
-        name: 'basketball'
-      }, {
+        category: 'Front End',
+        price: '100',
+        description: "description of react",
+        name: 'reactJS'
+      },
+      {
         id: 4,
-        category: 'Electronics',
-        price: '99.99',
-        qty: 34,
-        name: 'iPod Touch'
-      }, {
+        category: 'Front End',
+        price: '100',
+        description: "description of react",
+        name: 'reactJS'
+      },
+      {
         id: 5,
-        category: 'Electronics',
-        price: '399.99',
-        qty: 12,
-        name: 'iPhone 5'
-      }, {
+        category: 'Front End',
+        price: '100',
+        description: "description of react",
+        name: 'reactJS'
+      },
+      {
         id: 6,
-        category: 'Electronics',
-        price: '199.99',
-        qty: 23,
-        name: 'nexus 7'
-      }
+        category: 'Front End',
+        price: '100',
+        description: "description of react",
+        name: 'reactJS'
+      }, 
     ];
 
   }
@@ -85,7 +90,7 @@ var courses = this.state.courses.slice();
   var newCourses = courses.map(function(course) {
 
     for (var key in course) {
-      if (key === item.name && course.id === item.id) {
+      if (key == item.name && course.id == item.id) {
         course[key] = item.value;
 
       }
@@ -100,7 +105,7 @@ var courses = this.state.courses.slice();
     return (
       <div>
         <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)}/>
-        <UpdateCoursesTable onUpdateCoursesTableUpdate={this.handleUpdateCoursesTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} courses={this.state.courses} filterText={this.state.filterText}/>
+        <UpdateCoursesTable onProductTableUpdate={this.handleUpdateCoursesTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} courses={this.state.courses} filterText={this.state.filterText}/>
       </div>
     );
 

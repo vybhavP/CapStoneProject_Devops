@@ -2,17 +2,17 @@ import React from 'react';
 import { Button, Table } from 'semantic-ui-react';
 import ProductRow from './ProductRow';
 
-export default class UpdateCoursesTable extends React.Component {
+export default class ProductTable extends React.Component {
 
   render() {
-    var onUpdateCoursesTableUpdate = this.props.onProductTableUpdate;
+    var onProductTableUpdate = this.props.onProductTableUpdate;
     var rowDel = this.props.onRowDel;
     var filterText = this.props.filterText;
-    var course = this.props.courses.map(function (course) {
-      if (course.name.indexOf(filterText) === -1) {
+    var product = this.props.products.map(function (product) {
+      if (product.name.indexOf(filterText) === -1) {
         return;
       }
-      return (<ProductRow onProductTableUpdate={onUpdateCoursesTableUpdate} course={course} onDelEvent={rowDel.bind(this)} key={course.id} />)
+      return (<ProductRow onProductTableUpdate={onProductTableUpdate} product={product} onDelEvent={rowDel.bind(this)} key={product.id} />)
     });
     return (
       <div>
@@ -23,14 +23,14 @@ export default class UpdateCoursesTable extends React.Component {
         <Table celled>
           <Table.Header>
 	      <Table.Row textAlign='center'>
-          <Table.HeaderCell>Name</Table.HeaderCell>
-          <Table.HeaderCell>price</Table.HeaderCell>
-          <Table.HeaderCell>category</Table.HeaderCell>
-          <Table.HeaderCell>description</Table.HeaderCell>
+		<Table.HeaderCell>Name</Table.HeaderCell>
+		<Table.HeaderCell>price</Table.HeaderCell>
+		<Table.HeaderCell>quantity</Table.HeaderCell>
+		<Table.HeaderCell>category</Table.HeaderCell>
 	      </Table.Row>
 	    </Table.Header>
           <Table.Body>
-            {course}
+            {product}
           </Table.Body>       
         </Table>
 	<Button color="green" className="btn btn-success pull-right">Update</Button>
