@@ -92,11 +92,7 @@ var courses = this.state.courses.slice();
   var newCourses = courses.map(function(course) {
 
     for (var key in course) {
-<<<<<<< HEAD
       if (key === item.name && course.id == item.id) {
-=======
-      if (key == item.name && course.id == item.id) {
->>>>>>> f0609b600795c3a6d2610eaf92ff18a8eb057bec
         course[key] = item.value;
       }
     }
@@ -112,7 +108,6 @@ var courses = this.state.courses.slice();
   render() {
     return (
       <div>
-<<<<<<< HEAD
         <SearchBar 
           filterText={this.state.filterText} 
           onUserInput={this.handleUserInput.bind(this)}
@@ -125,10 +120,6 @@ var courses = this.state.courses.slice();
           filterText={this.state.filterText}
           saveUpdatedCourses = {this.handleSaveUpdatedCourses.bind(this)}
         />
-=======
-        <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)}/>
-        <UpdateCoursesTable onProductTableUpdate={this.handleUpdateCoursesTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} courses={this.state.courses} filterText={this.state.filterText}/>
->>>>>>> f0609b600795c3a6d2610eaf92ff18a8eb057bec
       </div>
     );
 

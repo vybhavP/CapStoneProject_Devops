@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Table } from 'semantic-ui-react';
-import ProductRow from './ProductRow';
+import UpdateCoursesRow from './UpdateCoursesRow';
 
 export default class UpdateCoursesTable extends React.Component {
   constructor(props) {
@@ -12,18 +12,14 @@ export default class UpdateCoursesTable extends React.Component {
   //   console.log(this.state.updated_courses)
   // }
   render() {
-    var onUpdateCoursesTableUpdate = this.props.onProductTableUpdate;
+    var onUpdateCoursesTableUpdate = this.props.onUpdateCoursesTableUpdate;
     var rowDel = this.props.onRowDel;
     var filterText = this.props.filterText;
     var course = this.props.courses.map(function (course) {
       if (course.name.indexOf(filterText) === -1) {
         return;
       }
-<<<<<<< HEAD
       return (<UpdateCoursesRow onUpdateCoursesTableUpdate={onUpdateCoursesTableUpdate} course={course} key={course.id} />)
-=======
-      return (<ProductRow onProductTableUpdate={onUpdateCoursesTableUpdate} course={course} onDelEvent={rowDel.bind(this)} key={course.id} />)
->>>>>>> f0609b600795c3a6d2610eaf92ff18a8eb057bec
     });
     return (
       <div>
