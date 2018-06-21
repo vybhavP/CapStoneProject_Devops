@@ -2,7 +2,7 @@ import React from 'react';
 import { Header, Segment } from 'semantic-ui-react';
 
 import '../App.css'
-import UpdateCourses from './UpdateCourses';
+import { UpdateCourses } from './ManageCourses';
 
 
 export default class update_course extends React.Component {

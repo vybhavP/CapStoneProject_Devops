@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button, Checkbox, Form } from 'semantic-ui-react';
+import { Button, Form } from 'semantic-ui-react';
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -52,7 +52,7 @@ export default class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <div className={`ui positive message hidden`}>
           <div className="header">
             LoggedIn Successfully

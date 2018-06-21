@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label, Table, Header, Segment } from 'semantic-ui-react';
+import { Header, Segment } from 'semantic-ui-react';
 import '../App.css';
 
 import react_image_card from '../images/react_card.jpg';
@@ -7,7 +7,7 @@ import mongodb_image_card from '../images/mongodb_card.jpg';
 import node_image_card from '../images/node_card.jpg';
 import express_image_card from '../images/express_card.jpg';
 
-import courses from '../courses.json';
+// import courses from '../courses.json';
 
 export default class ViewCourses extends React.Component {
 	constructor(props) {
@@ -62,14 +62,14 @@ export default class ViewCourses extends React.Component {
 	};
 
 	render() {
-		const coursesList = courses.courses;
+		// const coursesList = courses.courses;
 		//console.log(coursesList);
-		var courses_data = () => { for(var i=0;i<coursesList.length;i++){
-			console.log(<Table.Row><Table.Cell>coursesList[i].name</Table.Cell>
-				<Table.Cell>coursesList[i]</Table.Cell>
-			</Table.Row>)
-				}
-		}
+		// var courses_data = () => { for(var i=0;i<coursesList.length;i++){
+		// 	console.log(<Table.Row><Table.Cell>coursesList[i].name</Table.Cell>
+		// 		<Table.Cell>coursesList[i]</Table.Cell>
+		// 	</Table.Row>)
+		// 		}
+		// }
 		//let data = JSON.parse(courses)
 		//console.log("data from data.js is ::: " + data.courses);
 		return (

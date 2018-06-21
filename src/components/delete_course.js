@@ -2,7 +2,7 @@ import React from 'react';
 import { Header, Segment } from 'semantic-ui-react';
 
 import '../App.css';
-import DeleteCourses from './DeleteCourses';
+import { DeleteCourses } from './ManageCourses';
 
 const DeleteCourse = () => (
 <div>

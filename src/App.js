@@ -27,37 +27,36 @@ class App extends Component {
         {/* <Menubar /> */}
         {/* <Image src={MyImage} fluid /> */}
         <Router>
-    <div>
-      <ul className="Home_menu">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/login">Login or Signup</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-      </ul>
-      <hr />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/login" component={LoginOrSignup} />
-      <Route path="/about" component={About} />
-      <Route path="/user_login" component={UserLogin} />
-      <Route path="/user_signup" component={UserSignup} />
-      <Route path="/user_home" component={UserHome} />
-      <Route path="/add_course" component={AddCourse} />
-      <Route path="/view_courses" component={ViewCourses} />
-      <Route path="/update_course" component={UpdateCourse} />
-      <Route path="/delete_course" component={DeleteCourse} />
-    </div>
-  </Router>
+          <div>
+            <ul className="Home_menu">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/login">Login or Signup</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+            </ul>
+            <hr />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={LoginOrSignup} />
+            <Route path="/about" component={About} />
+            <Route path="/user_login" component={UserLogin} />
+            <Route path="/user_signup" component={UserSignup} />
+            <Route path="/user_home" component={UserHome} />
+            <Route path="/add_course" component={AddCourse} />
+            <Route path="/view_courses" component={ViewCourses} />
+            <Route path="/update_course" component={UpdateCourse} />
+            <Route path="/delete_course" component={DeleteCourse} />
+          </div>
+        </Router>
         {/* <ContainerExampleFluid /> */}
         {/* <Button primary as={NavLink} to="/login">Login</Button> */}
         {/* <DividerExampleHorizontal /> */}
       </div>
-    );
-  }
+    )};
 }
 
 export default App;
