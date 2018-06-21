@@ -1,0 +1,4 @@
+---
+# vars file for ./roles/course_management
+
+app_home: /home/osgdev/vaibhav/capstone

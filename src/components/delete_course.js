@@ -5,14 +5,14 @@ import '../App.css';
 import DeleteCourses from './DeleteCourses';
 
 const DeleteCourse = () => (
-    <div>
+<div>
 	<Segment>
-	    <Header as='h2' textAlign='center'>
-	      Delete your courses
-	    </Header>
+		<Header as='h2' textAlign='center'>
+			Delete your courses
+		</Header>
 	</Segment>
-        <DeleteCourses />
-    </div>
+	<DeleteCourses />
+</div>
 );
 
 export default DeleteCourse;

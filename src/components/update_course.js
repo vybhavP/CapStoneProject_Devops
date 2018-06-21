@@ -6,18 +6,19 @@ import UpdateCourses from './UpdateCourses';
 
 
 export default class update_course extends React.Component {
-	render() {
-		return (
-			<div> 
-				<Segment>
-				    <Header as='h3' textAlign='center'>
-				      Update your courses
-				    </Header>
-				</Segment>
-				<UpdateCourses />
-			</div>
-
-		)
-	}
+render() {
+	return (
+		<div> 
+			<Segment>
+				<Header 
+					as='h3' 
+					textAlign='center'
+				>
+					Update your courses
+				</Header>
+			</Segment>
+			<UpdateCourses />
+		</div>
+	)}
 }
 

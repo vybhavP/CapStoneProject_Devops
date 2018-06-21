@@ -1,0 +1,6 @@
+# Running playbook --> command
+# ansible-playbook ./roles/course_management/course_management.yml -v --user=osgdev --extra-vars "ansible_sudo_pass=osg@1234"
+
+- hosts: localhost
+  roles:
+    - course_management

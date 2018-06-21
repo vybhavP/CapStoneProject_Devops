@@ -17,7 +17,9 @@ export default class ViewCourses extends React.Component {
 		this.state.filterText = "";
 	}
 	handleUserInput(filterText) {
-		this.setState({ filterText: filterText });
+		this.setState({ 
+			filterText: filterText 
+		});
 	};
 	handleRowDel(course) {
 		var index = this.state.courses.indexOf(course);
@@ -54,7 +56,9 @@ export default class ViewCourses extends React.Component {
 			}
 			return course;
 		});
-		this.setState({ courses: newCourses });
+		this.setState({ 
+			courses: newCourses 
+		});
 	};
 
 	render() {
@@ -71,12 +75,15 @@ export default class ViewCourses extends React.Component {
 		return (
 			<div>
 				<Segment>
-					<Header as='h3' textAlign='center'>
+					<Header 
+						as='h3' 
+						textAlign='center'
+					>
 						List of Available courses
-				    </Header>
+				  </Header>
 				</Segment>
-				{/*<SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />*/}
-				<Table celled textAlign="center">
+				{/* <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} /> */}
+				{/* <Table celled textAlign="center">
 					<Table.Header>
 						<Table.Row>
 							<Table.HeaderCell>S.No</Table.HeaderCell>
@@ -149,7 +156,7 @@ export default class ViewCourses extends React.Component {
 							<Table.Cell>MongoDB is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database 			program, MongoDB uses JSON-like documents with schemas.</Table.Cell>
 						</Table.Row>
 
-					</Table.Body>
+					</Table.Body> */}
 
 					{/*<Table.Footer>
 				<Table.Row>
@@ -169,7 +176,7 @@ export default class ViewCourses extends React.Component {
 					</Table.HeaderCell>
 				</Table.Row>
 			</Table.Footer>*/}
-				</Table>
+				{/* </Table> */}
 <div className="ui link cards container">
   <div className="card">
     <div className="image">
@@ -230,8 +237,7 @@ export default class ViewCourses extends React.Component {
 
 
 </div>
-			</div>
-
+</div>
 		)
 	}
 }

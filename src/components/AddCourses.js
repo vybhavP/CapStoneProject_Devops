@@ -13,7 +13,9 @@ export default class AddCourses extends React.Component {
     this.state.courses = [];
   }
   handleUserInput(filterText) {
-    this.setState({ filterText: filterText });
+    this.setState({ 
+      filterText: filterText 
+    });
   };
   handleRowDel(course) {
     var index = this.state.courses.indexOf(course);
@@ -35,13 +37,14 @@ export default class AddCourses extends React.Component {
   }
   
   handleSave(evt) {
-    alert("triggered handle save function");
-    console.log(this.state.courses)
+    
+    console.log(this.state.courses);
     var courses = this.state.courses.slice();
     for(var i = 0; i< courses.length; i++){
-	console.log(courses[i].id + "\n" + courses[i].name + "\n" + 
-	courses[i].price + "\n" + courses[i].category + "\n" + courses[i].description);
+	    console.log(courses[i].id + "\n" + courses[i].name + "\n" + 
+	    courses[i].price + "\n" + courses[i].category + "\n" + courses[i].description);
     }
+    alert("Saved Coures Data!!");
   }
   handleAddCoursesTable(evt) {
     var item = {
@@ -53,7 +56,7 @@ export default class AddCourses extends React.Component {
     var courses = this.state.courses.slice();
     //console.log(courses+" courses")
     var newCourses = courses.map(function (course) {
-      console.log(course+"1234")
+      console.log(course)
       for (var key in course) {
         if (key === item.name && course.id === item.id) {
           course[key] = item.value;
@@ -61,14 +64,25 @@ export default class AddCourses extends React.Component {
       }
       return course;
     });
-    this.setState({ courses: newCourses });
+    this.setState({ 
+      courses: newCourses 
+    });
   };
   render() {
     return (
       <div>
-        <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />
-        <AddCoursesTable onAddCoursesTableUpdate={this.handleAddCoursesTable.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} courses={this.state.courses} filterText={this.state.filterText} onSave={this.handleSave.bind(this)} />
+        <SearchBar 
+          filterText={this.state.filterText} 
+          onUserInput={this.handleUserInput.bind(this)} 
+        />
+        <AddCoursesTable 
+          onAddCoursesTableUpdate={this.handleAddCoursesTable.bind(this)} 
+          onRowAdd={this.handleAddEvent.bind(this)} 
+          onRowDel={this.handleRowDel.bind(this)} 
+          courses={this.state.courses} 
+          filterText={this.state.filterText} 
+          onSave={this.handleSave.bind(this)} 
+        />
       </div>
-    );
-  }
+    )};
 }

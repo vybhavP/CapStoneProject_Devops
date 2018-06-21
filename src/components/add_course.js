@@ -5,14 +5,16 @@ import '../App.css';
 import AddCourses from './AddCourses';
 
 const AddCourse = () => (
-    <div>
+<div>
 	<Segment>
-	    <Header as='h3' textAlign='center'>
-	      Add your courses
-	    </Header>
+		<Header as='h3' 
+		textAlign='center'
+		>
+			Add your courses
+		</Header>
 	</Segment>
-        <AddCourses />
-    </div>
+	<AddCourses />
+</div>
 );
 
 export default AddCourse;
