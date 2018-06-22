@@ -1,20 +1,21 @@
-import React from 'react';
-import { Header, Segment } from 'semantic-ui-react';
+/*eslint-disable no-unused-vars*/
+import React from "react";
+import { Header, Segment } from "semantic-ui-react";
 
-import '../App.css';
-import { AddCourses } from './ManageCourses';
+import "../App.css";
+import { AddCourses } from "./ManageCourses";
 
 const AddCourse = () => (
-<div>
-	<Segment>
-		<Header as='h3' 
-		textAlign='center'
-		>
+	<div>
+		<Segment>
+			<Header as='h3' 
+				textAlign='center'
+			>
 			Add your courses
-		</Header>
-	</Segment>
-	<AddCourses />
-</div>
+			</Header>
+		</Segment>
+		<AddCourses />
+	</div>
 );
 
 export default AddCourse;

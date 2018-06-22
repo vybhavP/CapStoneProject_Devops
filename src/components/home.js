@@ -1,11 +1,12 @@
-import React from 'react';
+/*eslint-disable no-unused-vars*/
+import React from "react";
 // import { Header, Segment } from 'semantic-ui-react';
 
-import '../App.css'
-import CourseManagementSystem from '../images/course-management-system.jpg';
+import "../App.css";
+import CourseManagementSystem from "../images/course-management-system.jpg";
 
 const Home = () => (
-  <div>
+	<div>
 		{/* <Segment>
 				<Header 
 					as='h1' 
@@ -19,7 +20,7 @@ const Home = () => (
 			alt="CourseManagementSystem" 
 			className="home_page_image" 
 		/>
-  </div>
+	</div>
 );
 
 export default Home;

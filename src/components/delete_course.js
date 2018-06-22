@@ -1,18 +1,19 @@
-import React from 'react';
-import { Header, Segment } from 'semantic-ui-react';
+/*eslint-disable no-unused-vars*/
+import React from "react";
+import { Header, Segment } from "semantic-ui-react";
 
-import '../App.css';
-import { DeleteCourses } from './ManageCourses';
+import "../App.css";
+import { DeleteCourses } from "./ManageCourses";
 
 const DeleteCourse = () => (
-<div>
-	<Segment>
-		<Header as='h2' textAlign='center'>
+	<div>
+		<Segment>
+			<Header as='h2' textAlign='center'>
 			Delete your courses
-		</Header>
-	</Segment>
-	<DeleteCourses />
-</div>
+			</Header>
+		</Segment>
+		<DeleteCourses />
+	</div>
 );
 
 export default DeleteCourse;

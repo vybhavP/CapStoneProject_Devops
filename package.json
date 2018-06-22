@@ -5,6 +5,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-15": "^1.0.5",
     "express": "^4.16.3",
     "foreman": "^3.0.0",
     "marked": "^0.4.0",
@@ -12,6 +14,8 @@
     "mongoose": "^5.1.4",
     "nodemon": "^1.17.5",
     "react": "^16.4.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-cosmos-test": "^4.5.0",
     "react-dom": "^16.3.2",
     "react-loadable": "^5.4.0",
     "react-router": "^4.2.0",
@@ -27,8 +31,14 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.9.1",
     "jest": "^23.1.0",
     "webpack-cli": "^3.0.4",
     "webpack-command": "^0.2.1"
-  }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ]
 }

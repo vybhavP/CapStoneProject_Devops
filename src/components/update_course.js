@@ -1,24 +1,24 @@
-import React from 'react';
-import { Header, Segment } from 'semantic-ui-react';
+import React from "react";
+import { Header, Segment } from "semantic-ui-react";
 
-import '../App.css'
-import { UpdateCourses } from './ManageCourses';
+import "../App.css";
+import { UpdateCourses } from "./ManageCourses";
 
 
 export default class update_course extends React.Component {
-render() {
-	return (
-		<div> 
-			<Segment>
-				<Header 
-					as='h3' 
-					textAlign='center'
-				>
+	render() {
+		return (
+			<div> 
+				<Segment>
+					<Header 
+						as='h3' 
+						textAlign='center'
+					>
 					Update your courses
-				</Header>
-			</Segment>
-			<UpdateCourses />
-		</div>
-	)}
+					</Header>
+				</Segment>
+				<UpdateCourses />
+			</div>
+		);}
 }
 

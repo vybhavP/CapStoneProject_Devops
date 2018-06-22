@@ -1,11 +1,11 @@
-import React from 'react';
-import { Button } from 'semantic-ui-react';
+import React from "react";
+import { Button } from "semantic-ui-react";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default class Login extends React.Component {
 	handleLogout(){
-		this.props.history.push('/');
+		this.props.history.push("/");
 	}
 	render() {
 		return (
@@ -27,31 +27,31 @@ export default class Login extends React.Component {
 					className="ui compact vertical labeled icon menu"
 				>
 					<Link to="/add_course">
-					<a className="item">
-						<i className="plus square outline icon green"></i>
+						<a className="item">
+							<i className="plus square outline icon green"></i>
 						Add Course
-					</a>
+						</a>
 					</Link>
 					<Link to="/view_courses">
-					<a className="item">
-						<i className="book icon yellow"></i>
+						<a className="item">
+							<i className="book icon yellow"></i>
 						View Courses
-					</a>
+						</a>
 					</Link>
 					<Link to="/update_course">
-					<a className="item">
-						<i className="write icon olive"></i>
+						<a className="item">
+							<i className="write icon olive"></i>
 						Update Courses
-					</a>
+						</a>
 					</Link>
 					<Link to="/delete_course">
-					<a className="item">
-						<i className="times rectangle icon red"></i>
+						<a className="item">
+							<i className="times rectangle icon red"></i>
 						Delete Courses
-					</a>
+						</a>
 					</Link>
 				</div>
 			</div>
-		)
+		);
 	}
 }
