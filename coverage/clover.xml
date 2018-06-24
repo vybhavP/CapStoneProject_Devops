@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1529847350991" clover="3.2.0">
-  <project timestamp="1529847350992" name="All files">
-    <metrics statements="271" coveredstatements="0" conditionals="100" coveredconditionals="0" methods="91" coveredmethods="0" elements="462" coveredelements="0" complexity="0" loc="271" ncloc="271" packages="2" files="18" classes="18">
+<coverage generated="1529860003310" clover="3.2.0">
+  <project timestamp="1529860003311" name="All files">
+    <metrics statements="273" coveredstatements="2" conditionals="100" coveredconditionals="0" methods="92" coveredmethods="1" elements="465" coveredelements="3" complexity="0" loc="273" ncloc="273" packages="2" files="19" classes="19">
       <package name="src">
         <metrics statements="21" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <file name="App.js" path="D:\Git_Repositories\CapStoneProject_Devops\src\App.js">
@@ -33,7 +33,7 @@
         </file>
       </package>
       <package name="src.components">
-        <metrics statements="250" coveredstatements="0" conditionals="92" coveredconditionals="0" methods="88" coveredmethods="0"/>
+        <metrics statements="252" coveredstatements="2" conditionals="92" coveredconditionals="0" methods="89" coveredmethods="1"/>
         <file name="CoursesRow.js" path="D:\Git_Repositories\CapStoneProject_Devops\src\components\CoursesRow.js">
           <metrics statements="12" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="7" coveredmethods="0"/>
           <line num="1" count="0" type="stmt"/>
@@ -181,6 +181,11 @@
           <line num="9" count="0" type="stmt"/>
           <line num="25" count="0" type="stmt"/>
         </file>
+        <file name="SegmentComponent.js" path="D:\Git_Repositories\CapStoneProject_Devops\src\components\SegmentComponent.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+        </file>
         <file name="ViewCourse_card.js" path="D:\Git_Repositories\CapStoneProject_Devops\src\components\ViewCourse_card.js">
           <metrics statements="7" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
           <line num="1" count="0" type="stmt"/>
@@ -198,7 +203,7 @@
           <line num="3" count="0" type="cond" truecount="0" falsecount="4"/>
           <line num="5" count="0" type="stmt"/>
           <line num="6" count="0" type="stmt"/>
-          <line num="12" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
         </file>
         <file name="add_course.js" path="D:\Git_Repositories\CapStoneProject_Devops\src\components\add_course.js">
           <metrics statements="8" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
@@ -209,7 +214,7 @@
           <line num="6" count="0" type="cond" truecount="0" falsecount="4"/>
           <line num="8" count="0" type="stmt"/>
           <line num="9" count="0" type="stmt"/>
-          <line num="17" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
         </file>
         <file name="delete_course.js" path="D:\Git_Repositories\CapStoneProject_Devops\src\components\delete_course.js">
           <metrics statements="8" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
@@ -220,17 +225,17 @@
           <line num="6" count="0" type="cond" truecount="0" falsecount="4"/>
           <line num="8" count="0" type="stmt"/>
           <line num="9" count="0" type="stmt"/>
-          <line num="15" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
         </file>
         <file name="home.js" path="D:\Git_Repositories\CapStoneProject_Devops\src\components\home.js">
           <metrics statements="7" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
           <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
           <line num="4" count="0" type="stmt"/>
-          <line num="5" count="0" type="stmt"/>
-          <line num="6" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="5" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="7" count="0" type="stmt"/>
           <line num="8" count="0" type="stmt"/>
-          <line num="9" count="0" type="stmt"/>
-          <line num="21" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
         </file>
         <file name="loginorsignup.js" path="D:\Git_Repositories\CapStoneProject_Devops\src\components\loginorsignup.js">
           <metrics statements="7" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
@@ -246,10 +251,10 @@
           <metrics statements="6" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
           <line num="1" count="0" type="stmt"/>
           <line num="2" count="0" type="stmt"/>
-          <line num="4" count="0" type="stmt"/>
-          <line num="5" count="0" type="cond" truecount="0" falsecount="4"/>
-          <line num="10" count="0" type="stmt"/>
-          <line num="22" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
         </file>
         <file name="user_home.js" path="D:\Git_Repositories\CapStoneProject_Devops\src\components\user_home.js">
           <metrics statements="6" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
@@ -330,7 +335,7 @@
           <line num="59" count="0" type="stmt"/>
           <line num="61" count="0" type="stmt"/>
           <line num="77" count="0" type="stmt"/>
-          <line num="245" count="0" type="stmt"/>
+          <line num="246" count="0" type="stmt"/>
         </file>
       </package>
     </metrics>
