@@ -1,6 +1,5 @@
 import React from "react";
-import { Header, Segment } from "semantic-ui-react";
-
+import SegmentComponent from './SegmentComponent';
 import "../App.css";
 import { UpdateCourses } from "./ManageCourses";
 
@@ -8,15 +7,8 @@ import { UpdateCourses } from "./ManageCourses";
 export default class update_course extends React.Component {
 	render() {
 		return (
-			<div> 
-				<Segment>
-					<Header 
-						as='h3' 
-						textAlign='center'
-					>
-					Update your courses
-					</Header>
-				</Segment>
+			<div>
+				<SegmentComponent header = "Update your courses" /> 
 				<UpdateCourses />
 			</div>
 		);}

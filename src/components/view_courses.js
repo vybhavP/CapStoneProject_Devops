@@ -5,7 +5,7 @@ import react_image_card from "../images/react_card.jpg";
 import mongodb_image_card from "../images/mongodb_card.jpg";
 import node_image_card from "../images/node_card.jpg";
 import express_image_card from "../images/express_card.jpg";
-import { Header, Segment } from "semantic-ui-react";
+import SegmentComponent from './SegmentComponent';
 
 // import ViewCourse_card from "./ViewCourse_card";
 
@@ -76,14 +76,15 @@ export default class ViewCourses extends React.Component {
 		//console.log("data from data.js is ::: " + data.courses);
 		return (
 			<div>
-				<Segment>
+				<SegmentComponent header = "List of Available courses" />
+				{/* <Segment>
 					<Header 
 						as='h3' 
 						textAlign='center'
 					>
 						List of Available courses
 					</Header>
-				</Segment>
+				</Segment> */}
 				{/* <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} /> */}
 				{/* <Table celled textAlign="center">
 					<Table.Header>
