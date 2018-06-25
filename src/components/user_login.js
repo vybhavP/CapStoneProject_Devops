@@ -1,20 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Button, Form } from "semantic-ui-react";
+import { read_cookie } from 'sfcookies';
+
+const cookie_key = "Users";
 
 export default class Login extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { 
-			username: "vybhav", 
-			password: "vybhav", 
-			isLoginFailed: true 
+			email: '', 
+			password: '', 
+			isLoginFailed: true,
+			users: [] 
 		};
 	}
-
-	handleUserNameChange(username) {
+	componentDidMount(){
+		this.setState({ users: read_cookie(cookie_key) });
+		console.log(read_cookie(cookie_key));
+		// delete_cookie(cookie_key);
+	}
+	handleEmailChange(email) {
 		this.setState({ 
-			username: username.target.value 
+			email: email.target.value 
 		});
 	}
 
@@ -26,28 +34,36 @@ export default class Login extends React.Component {
 	}
 
 	handleAdminFormSubmit() {
-		if (this.state.username === "vybhav" && this.state.password === "vybhav") {
-			this.props.history.push("/user_home");
-			this.setState({ 
-				isLoginFailed: false 
-			});
-			// console.log("isLoginFailed success: " + this.state.isLoginFailed);
+		const { email, password, users } = this.state;
+		for( let i = 0; i< this.state.users.length; i++){
+		// 	console.log(this.state.users[i].firstName)
+			if (email === users[i].email && password === users[i].password) {
+				this.props.history.push("/user_home");
+				this.setState({ 
+					isLoginFailed: false 
+				});
+				// console.log("isLoginFailed success: " + this.state.isLoginFailed);
+			}
+			else {
+				this.props.history.push("/user_login");
+				this.setState({ 
+					isLoginFailed: true,
+					email: '',
+					password: '' 
+				});
+				alert('please signup and then signin if you dont have an account')
+				// console.log("isLoginFailed failed: " + this.state.isLoginFailed);
+			}
 		}
-		else {
-			this.props.history.push("/user_login");
-			this.setState({ 
-				isLoginFailed: true 
-			});
-			// console.log("isLoginFailed failed: " + this.state.isLoginFailed);
-		}
+		
 	}
 
 	clearFormValues() {
 		this.setState({ 
-			username: "", 
+			email: "", 
 			password: "" 
 		});
-		ReactDOM.findDOMNode(this.refs.userName).focus();
+		ReactDOM.findDOMNode(this.refs.email).focus();
 	}
 
 	render() {
@@ -63,14 +79,14 @@ export default class Login extends React.Component {
 					onSubmit={this.handleAdminFormSubmit.bind(this)}
 				>
 					<Form.Field>
-						<label>Username</label>
+						<label>Email</label>
 						<input 
-							placeholder='Username' 
+							placeholder='email' 
 							type='text' 
-							name="UserName" 
-							value={this.state.username} 
-							onChange={this.handleUserNameChange.bind(this)} 
-							ref="userName" 
+							name="email" 
+							value={this.state.email} 
+							onChange={this.handleEmailChange.bind(this)} 
+							ref="email" 
 						/>
 					</Form.Field>
 					<Form.Field>

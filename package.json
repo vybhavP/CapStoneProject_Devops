@@ -21,7 +21,8 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "semantic-ui-css": "^2.3.1",
-    "semantic-ui-react": "^0.79.1"
+    "semantic-ui-react": "^0.79.1",
+    "sfcookies": "^1.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
