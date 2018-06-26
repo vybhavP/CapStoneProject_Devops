@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import SegmentComponent from '../components/SegmentComponent';
+import SegmentComponent from './SegmentComponent';
 
 configure({ adapter: new Adapter() });
 
