@@ -2,15 +2,15 @@ import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import user_lupdate_courseogin from './update_course';
+import user_login from '../components/user_login';
 
 configure({ adapter: new Adapter() });
 
-// const props = {header: "Header test"}
+const props = {header: "Header test"}
 describe('<user_login />', () =>{
     it('header', ()=>{
-        const updateCourseComponent = shallow(<update_course />)
-        console.log(updateCourseComponent.debug())
-        expect(updateCourseComponent).toHaveLength(1);
+        const loginComponent = shallow(<user_login />)
+        console.log(loginComponent.debug())
+        expect(loginComponent).toHaveLength(1);
     });
 });

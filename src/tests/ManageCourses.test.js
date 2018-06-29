@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import ManageCourses from './ManageCourses';
+import ManageCourses from '../components/ManageCourses';
 
 configure({ adapter: new Adapter() });
 

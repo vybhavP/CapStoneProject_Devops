@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import user_signup from './user_signup';
+import user_signup from '../components/user_signup';
 
 configure({ adapter: new Adapter() });
 

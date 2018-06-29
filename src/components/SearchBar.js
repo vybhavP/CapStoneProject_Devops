@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "semantic-ui-react";
+import { Form, Input } from "semantic-ui-react";
 
 export default class SearchBar extends React.Component {
 	handleChange() {
@@ -14,9 +14,9 @@ export default class SearchBar extends React.Component {
 							type="text" 
 							placeholder="Search for your courses..." 
 							width={2} 
-							value={this.props.filterText} 
+							value={this.props.filterText || ''} 
 							ref="filterTextInput" 
-							onChange={this.handleChange.bind(this)} 
+							onChange={this.handleChange.bind(this)}
 						/>
 					</Form.Field>
 				</Form>

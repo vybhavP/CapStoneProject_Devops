@@ -173,6 +173,7 @@ class UserSingup extends Component {
 						ref="resetButton" 
 						onClick={this.clearFormValues.bind(this)} 
 						color='grey'
+						className="resetForm"
 					>
 						Reset
 					</Button>

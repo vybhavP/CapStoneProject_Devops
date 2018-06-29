@@ -5,7 +5,7 @@ import SegmentComponent from './SegmentComponent';
 const About = () => (
 	<div>
 		<SegmentComponent header = "About Course Management" />
-		<h1> This is used Add, View, Update, Delete courses </h1>
+		<h1> This Application is used to Add, View, Update, Delete courses </h1>
 	</div>
 );
 

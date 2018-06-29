@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import CoursesRow from './CoursesRow';
+import CoursesRow from '../components/CoursesRow';
 
 configure({ adapter: new Adapter() });
 

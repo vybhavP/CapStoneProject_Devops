@@ -142,4 +142,3 @@ export const UpdateCoursesTable = class UpdateCoursesTable extends React.Compone
 			</div>
 		);}
 };
-  

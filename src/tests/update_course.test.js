@@ -2,15 +2,15 @@ import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import user_home from './user_home';
+import user_lupdate_courseogin from '../components/update_course';
 
 configure({ adapter: new Adapter() });
 
 // const props = {header: "Header test"}
-describe('<user_home />', () =>{
+describe('<user_login />', () =>{
     it('header', ()=>{
-        const userHomeComponent = shallow(<user_home />)
-        console.log(userHomeComponent.debug())
-        expect(userHomeComponent).toHaveLength(1);
+        const updateCourseComponent = shallow(<update_course />)
+        console.log(updateCourseComponent.debug())
+        expect(updateCourseComponent).toHaveLength(1);
     });
 });

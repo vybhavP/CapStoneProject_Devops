@@ -2,15 +2,15 @@ import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import SearchBar from './SearchBar';
+import user_home from '../components/user_home';
 
 configure({ adapter: new Adapter() });
 
 // const props = {header: "Header test"}
-describe('<user_login />', () =>{
+describe('<user_home />', () =>{
     it('header', ()=>{
-        const searchBarComponent = shallow(<SearchBar />)
-        console.log(searchBarComponent.debug())
-        expect(searchBarComponent).toHaveLength(1);
+        const userHomeComponent = shallow(<user_home />)
+        console.log(userHomeComponent.debug())
+        expect(userHomeComponent).toHaveLength(1);
     });
 });

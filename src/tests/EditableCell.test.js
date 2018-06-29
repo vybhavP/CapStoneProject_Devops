@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import EditableCell from './EditableCell';
+import EditableCell from '../components/EditableCell';
 
 configure({ adapter: new Adapter() });
 
