@@ -58,3 +58,14 @@ export const UpdateCourses = class UpdateCourses extends React.Component {
 		);
 	}
 };
+
+export const ViewCourses = class ViewCourses extends React.Component {
+	render() {
+		return (
+			<Table.Cell 
+				textAlign='center'>
+				{this.props.cellData.value}
+			</Table.Cell>
+		);
+	}
+};

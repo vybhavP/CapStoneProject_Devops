@@ -3,7 +3,7 @@ import React from "react";
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import { Form, Button } from "semantic-ui-react";
-import { bake_cookie, read_cookie, delete_cookie  } from 'sfcookies';
+import { bake_cookie } from 'sfcookies';
 
 const cookie_key = "Users";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Table } from "semantic-ui-react";
-import { AddCoursesRow, DeleteCoursesRow, UpdateCoursesRow } from "./CoursesRow";
+import { AddCoursesRow, DeleteCoursesRow, UpdateCoursesRow, ViewCoursesRow } from "./CoursesRow";
 
 export const AddCoursesTable = class AddCoursesTable extends React.Component {
 
@@ -93,7 +93,7 @@ export const DeleteCoursesTable = class DeleteCoursesTable extends React.Compone
 						</Table.Row>
 					</Table.Header>
 					<Table.Body>
-						{course}
+					{course.length > 0 ? course : <h1 align='center'>No Courses to delete</h1> }
 					</Table.Body>
 				</Table>
 			</div>
@@ -135,10 +135,50 @@ export const UpdateCoursesTable = class UpdateCoursesTable extends React.Compone
 						</Table.Row>
 					</Table.Header>
 					<Table.Body>
-						{course}
+						{course.length > 0 ? course : <h1 align='center'>No Courses to update</h1> }
 					</Table.Body>       
 				</Table>
 				<Button color="green" className="btn btn-success pull-right" onClick={this.props.saveUpdatedCourses}>Update</Button>
+			</div>
+		);}
+};
+
+export const ViewCoursesTable = class ViewCoursesTable extends React.Component {
+
+	render() {
+		var onViewCoursesTableUpdate = this.props.onViewCoursesTableUpdate;
+		var rowDel = this.props.onRowDel;
+		var isSaveEnabled = this.props.enableSave;
+		var filterText = this.props.filterText;
+		var course = this.props.courses.map(function (course) {
+			if (course.name.indexOf(filterText) === -1) {
+				return false;
+			}
+			return (
+				<ViewCoursesRow 
+					onViewCoursesTableUpdate={onViewCoursesTableUpdate} 
+					course={course} 
+					onDelEvent={rowDel.bind(this)} 
+					key={course.id} 
+					enableSave={isSaveEnabled}
+				/>
+			);
+		});
+		return (
+			<div>
+				<Table celled>
+					<Table.Header>
+						<Table.Row textAlign='center'>
+							<Table.HeaderCell>Name</Table.HeaderCell>
+							<Table.HeaderCell>Price</Table.HeaderCell>
+							<Table.HeaderCell>Category</Table.HeaderCell>
+							<Table.HeaderCell>Description</Table.HeaderCell>
+						</Table.Row>
+					</Table.Header>
+					<Table.Body>
+					{course.length > 0 ? course : <h1 align='center'>No Courses to show</h1> }
+					</Table.Body>
+				</Table>
 			</div>
 		);}
 };
