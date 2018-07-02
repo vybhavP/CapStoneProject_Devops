@@ -2,15 +2,13 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import { AddCoursesTable, DeleteCoursesTable, UpdateCoursesTable, ViewCoursesTable } from "./CoursesTable";
 import { bake_cookie, read_cookie } from 'sfcookies';
-
+import { Button, Modal } from 'semantic-ui-react';
 const cookie_key = "Courses";
 
 export const AddCourses =  class AddCourses extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
-		this.state.filterText = "";
-		this.state.courses = [];
+		this.state = { open: false, filterText: '', courses: []};
 	}
 	componentDidMount(){
 		// this.setState({ courses: read_cookie(cookie_key) });
@@ -53,10 +51,14 @@ export const AddCourses =  class AddCourses extends React.Component {
 		}
 		if(containEmptyValues === true){
 			alert("Plesase fill all the fields and then save");
+			//this.setState({ size: 'tiny', open: true });
+		}
+		else if(this.state.courses.length < 0){
+			alert("Please add atlease one course to save")
 		}
 		else{
 			bake_cookie(cookie_key, this.state.courses);
-			alert("Saved Coures Data!!");
+			this.setState({ size: 'tiny', open: true });
 			this.setState({ courses: [] });
 		}
 	}
@@ -79,7 +81,9 @@ export const AddCourses =  class AddCourses extends React.Component {
 			courses: newCourses 
 		});
 	}
+	close = () => this.setState({ open: false });
 	render() {
+		const { open, size } = this.state
 		return (
 			<div>
 				<SearchBar 
@@ -94,6 +98,15 @@ export const AddCourses =  class AddCourses extends React.Component {
 					filterText={this.state.filterText} 
 					onSave={this.handleSave.bind(this)} 
 				/>
+				<Modal size={size} open={open} onClose={this.close} style ={{ marginLeft:450, marginTop:50 }}>
+					<Modal.Header>Success</Modal.Header>
+					<Modal.Content>
+						<p>Saved Courses successfully</p>
+					</Modal.Content>
+					<Modal.Actions>
+						<Button onClick={this.close} positive abelPosition='right' content='Ok'/>
+					</Modal.Actions>
+				</Modal>
 			</div>
 		);}
 };
@@ -162,9 +175,7 @@ export const DeleteCourses = class DeleteCourses extends React.Component {
 export const UpdateCourses = class UpdateCourses extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
-		this.state.filterText = "";
-		this.state.courses = [];
+		this.state = { open: false, filterText: '', courses: []};
 	}
 	componentDidMount(){
 		this.setState({ courses: read_cookie(cookie_key) });
@@ -188,7 +199,7 @@ export const UpdateCourses = class UpdateCourses extends React.Component {
 		var courses = this.state.courses.slice();
 		var newCourses = courses.map(function(course) {  
 			for (var key in course) {
-				if (key === item.name && course.id == item.id) {
+				if (key === item.name && course.id === item.id) {
 					course[key] = item.value;
 				}
 			}
@@ -198,9 +209,11 @@ export const UpdateCourses = class UpdateCourses extends React.Component {
 	}
 	handleSaveUpdatedCourses() {
 		bake_cookie(cookie_key, this.state.courses);
-		alert("Updated courses successfully");
+		this.setState({ size: 'tiny', open: true });
 	}
+	close = () => this.setState({ open: false });
 	render() {
+		const { open, size } = this.state
 		return (
 			<div>
 				<SearchBar 
@@ -214,6 +227,15 @@ export const UpdateCourses = class UpdateCourses extends React.Component {
 					filterText={this.state.filterText}
 					saveUpdatedCourses = {this.handleSaveUpdatedCourses.bind(this)}
 				/>
+				<Modal size={size} open={open} onClose={this.close} style ={{ marginLeft:450, marginTop:50 }}>
+					<Modal.Header>Success</Modal.Header>
+					<Modal.Content>
+						<p>Updated Courses successfully</p>
+					</Modal.Content>
+					<Modal.Actions>
+						<Button onClick={this.close} positive abelPosition='right' content='Ok'/>
+					</Modal.Actions>
+				</Modal>
 			</div>
 		);}
 };

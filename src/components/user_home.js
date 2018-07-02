@@ -29,25 +29,25 @@ export default class Login extends React.Component {
 					<Link to="/add_course">
 						<a className="item">
 							<i className="plus square outline icon green"></i>
-						Add Course
+						ADD Courses
 						</a>
 					</Link>
 					<Link to="/view_courses">
 						<a className="item">
 							<i className="book icon yellow"></i>
-						View Courses
+						VIEW Courses
 						</a>
 					</Link>
 					<Link to="/update_course">
 						<a className="item">
 							<i className="write icon olive"></i>
-						Update Courses
+						UPDATE Courses
 						</a>
 					</Link>
 					<Link to="/delete_course">
 						<a className="item">
 							<i className="times rectangle icon red"></i>
-						Delete Courses
+						DELETE Courses
 						</a>
 					</Link>
 				</div>

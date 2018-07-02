@@ -10,7 +10,6 @@ const props = {header: "Header test"}
 describe('<home />', () =>{
     it('home', ()=>{
         const homeComponent = shallow(<home />)
-        console.log(homeComponent.debug())
         expect(homeComponent).toHaveLength(1);
     });
 });

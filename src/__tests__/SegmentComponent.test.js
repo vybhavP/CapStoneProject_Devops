@@ -9,7 +9,6 @@ configure({ adapter: new Adapter() });
 const props = {header: "Header test"}
 describe('Segment header', () =>{
     let segment_component = mount(<SegmentComponent header={props.header} />)
-    // console.log(segment_component.debug());
     it('header', ()=>{
         expect(segment_component.find('Header').text()).toEqual(props.header);
     });

@@ -10,7 +10,6 @@ const props = {header: "Header test"}
 describe('<add_course />', () =>{
     it('add course', ()=>{
         const addCourseComponent = shallow(<add_course />)
-        console.log(addCourseComponent.debug())
         expect(addCourseComponent).toHaveLength(1);
     });
 });

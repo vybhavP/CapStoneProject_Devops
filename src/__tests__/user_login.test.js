@@ -6,11 +6,15 @@ import user_login from '../components/user_login';
 
 configure({ adapter: new Adapter() });
 
-const props = {header: "Header test"}
+const cookie_key = 'Users';
+const props = {email: '', password: ''}
+
 describe('<user_login />', () =>{
-    it('header', ()=>{
-        const loginComponent = shallow(<user_login />)
-        console.log(loginComponent.debug())
+    const loginComponent = shallow(<user_login />)
+    it('login', ()=>{
         expect(loginComponent).toHaveLength(1);
+    });
+    it('form exists?', ()=>{
+        expect(loginComponent.exists('Form')).toBe(true);
     });
 });

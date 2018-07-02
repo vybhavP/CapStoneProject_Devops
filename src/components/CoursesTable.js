@@ -115,7 +115,7 @@ export const UpdateCoursesTable = class UpdateCoursesTable extends React.Compone
 		var filterText = this.props.filterText;
 		var course = this.props.courses.map(function (course) {
 			if (course.name.indexOf(filterText) === -1) {
-				return;
+				return false;
 			}
 			return (<UpdateCoursesRow onUpdateCoursesTableUpdate={onUpdateCoursesTableUpdate} course={course} key={course.id} />);
 		});

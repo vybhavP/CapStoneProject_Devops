@@ -10,7 +10,6 @@ const props = {header: "Header test"}
 describe('<loginorsignup />', () =>{
     it('header', ()=>{
         const loginOrSignupComponent = shallow(<loginorsignup />)
-        console.log(loginOrSignupComponent.debug())
         expect(loginOrSignupComponent).toHaveLength(1);
     });
 });

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Button, Form } from "semantic-ui-react";
+import { Button, Form, Divider } from "semantic-ui-react";
 import { read_cookie } from 'sfcookies';
 
 const cookie_key = "Users";
@@ -12,7 +12,8 @@ export default class Login extends React.Component {
 			email: '', 
 			password: '', 
 			isLoginFailed: true,
-			users: [] 
+			users: [],
+			returnForgotPassword: '' 
 		};
 	}
 	componentDidMount(){
@@ -25,7 +26,11 @@ export default class Login extends React.Component {
 			email: email.target.value 
 		});
 	}
-
+	handleForgotEmailChange(forgotEmail) {
+		this.setState({ 
+			forgotEmail: forgotEmail.target.value 
+		});
+	}
 	handlePasswordChange(password) {
 		// console.log(password.target.value);
 		this.setState({ 
@@ -35,27 +40,30 @@ export default class Login extends React.Component {
 
 	handleAdminFormSubmit() {
 		const { email, password, users } = this.state;
-		for( let i = 0; i< this.state.users.length; i++){
-		// 	console.log(this.state.users[i].firstName)
-			if (email === users[i].email && password === users[i].password) {
-				this.props.history.push("/user_home");
-				this.setState({ 
-					isLoginFailed: false 
-				});
-				// console.log("isLoginFailed success: " + this.state.isLoginFailed);
-			}
-			else {
-				this.props.history.push("/user_login");
-				this.setState({ 
-					isLoginFailed: true,
-					email: '',
-					password: '' 
-				});
-				alert('please signup and then signin if you dont have an account')
-				// console.log("isLoginFailed failed: " + this.state.isLoginFailed);
-			}
+		if(this.state.users.length){
+			for( let i = 0; i< this.state.users.length; i++){
+				// 	console.log(this.state.users[i].firstName)
+					if (email === users[i].email && password === users[i].password) {
+						this.props.history.push("/user_home");
+						this.setState({ 
+							isLoginFailed: false 
+						});
+						// console.log("isLoginFailed success: " + this.state.isLoginFailed);
+					}
+					else {
+						alert('please signup and then signin if you dont have an account');
+						this.props.history.push("/user_login");
+						this.setState({ 
+							isLoginFailed: true,
+							email: '',
+							password: '' 
+						});
+					}
+				}
 		}
-		
+		else{
+			alert("No users found!! Please signup and then signin")
+		}
 	}
 
 	clearFormValues() {
@@ -66,6 +74,24 @@ export default class Login extends React.Component {
 		ReactDOM.findDOMNode(this.refs.email).focus();
 	}
 
+	handleForgotPassword(){
+		const listOfUsers = read_cookie(cookie_key);
+		let existingUser = false;
+		for(var i=0; i<listOfUsers.length;i++){
+			if(listOfUsers[i].email === this.state.forgotEmail){
+				existingUser = true;
+				this.setState({ returnForgotPassword: listOfUsers[i].password}, 
+					alert(this.state.returnForgotPassword)
+				)
+			}
+		}
+		if(existingUser){
+			alert(this.state.returnForgotPassword);
+		}
+		else{
+			alert('No user found, please try with correct email ID')
+		}
+	}
 	render() {
 		return (
 			<div className="container">
@@ -82,7 +108,7 @@ export default class Login extends React.Component {
 						<label>Email</label>
 						<input 
 							placeholder='email' 
-							type='text' 
+							type='email' 
 							name="email" 
 							value={this.state.email} 
 							onChange={this.handleEmailChange.bind(this)} 
@@ -108,7 +134,7 @@ export default class Login extends React.Component {
 						ref="submitButton" 
 						color='purple'
 					>
-            Submit
+            			Submit
 					</Button>
 					<Button 
 						type='reset' 
@@ -119,6 +145,33 @@ export default class Login extends React.Component {
             Reset
 					</Button>
 				</Form>
+				<Divider horizontal>Forgot Password?</Divider>
+
+				<div className={"ui positive message"}>
+					<Form 
+						ref="admin_form" 
+						onSubmit={this.handleForgotPassword.bind(this)}
+					>
+						<Form.Field>
+							<label>Email</label>
+							<input 
+								placeholder='email' 
+								type='email' 
+								name="forgotEmail" 
+								value={this.state.forgotEmail} 
+								onChange={this.handleForgotEmailChange.bind(this)} 
+								ref="forgotEmail" 
+							/>
+						</Form.Field>
+						<Button 
+							type='submit'
+							color='teal'
+						>
+							get Password
+						</Button>
+					</Form>
+				</div>
+				
 			</div>
 		);
 	}

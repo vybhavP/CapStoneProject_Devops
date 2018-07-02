@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Table } from "semantic-ui-react";
+import { Input, Table, Confirm } from "semantic-ui-react";
 import { AddCourses, DeleteCourses, UpdateCourses, ViewCourses } from "./EditableCell";
 
 export const AddCoursesRow = class AddCoursesRow extends React.Component {
@@ -46,10 +46,21 @@ export const AddCoursesRow = class AddCoursesRow extends React.Component {
 };
 
 export const DeleteCoursesRow = class DeleteCoursesRow extends React.Component {
+	state = { open: false, result: 'show the modal to capture a result' }
+	
 	onDelEvent() {
+		this.setState({ open: true })
+		// this.props.onDelEvent(this.props.course);
+	}
+	handleConfirm = () => {
+		this.setState({ result: 'confirmed', open: false });
 		this.props.onDelEvent(this.props.course);
 	}
+  	handleCancel = () => {
+		this.setState({ result: 'cancelled', open: false });
+	}
 	render() {
+		const { open } = this.state
 		return (
 			<Table.Row 
 				className="eachRow"
@@ -91,6 +102,9 @@ export const DeleteCoursesRow = class DeleteCoursesRow extends React.Component {
 					className="del-cell" 
 					textAlign="center"
 				>
+				{/* <p>
+					Result: <em>{result}</em>
+				</p> */}
 					<Input 
 						error 
 						type="button" 
@@ -98,6 +112,12 @@ export const DeleteCoursesRow = class DeleteCoursesRow extends React.Component {
 						value="X" 
 						className="del-btn" 
 					/>
+					<Confirm 
+						header='Confirm'
+						open={open} 
+						onCancel={this.handleCancel} 
+						onConfirm={this.handleConfirm} 
+						style={{ marginTop: 50, marginLeft: 250 }} />
 				</Table.Cell>
 			</Table.Row>
 		);}

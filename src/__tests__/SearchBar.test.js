@@ -14,8 +14,8 @@ describe('<user_login />', () =>{
         // console.log(searchBarComponent.debug())
         // expect(searchBarComponent).toHaveLength(1);
         beforeEach(()=>{
-            searchBarComponent.find('Input').simulate('change',
-            target: {value : searchText}
+            searchBarComponent.find('input').simulate('change',
+            
             )
         });
         it(' updates the text in state', () =>{

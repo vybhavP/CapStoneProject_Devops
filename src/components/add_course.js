@@ -5,7 +5,7 @@ import SegmentComponent from './SegmentComponent';
 import "../App.css";
 import { AddCourses } from "./ManageCourses";
 
-const AddCourse = () => (
+const AddCourse = (props) => (
 	<div>
 		<SegmentComponent header = "Add your courses" />
 		<AddCourses />
