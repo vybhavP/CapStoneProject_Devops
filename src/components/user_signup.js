@@ -7,7 +7,7 @@ import {
 	Button,
 	Label,
 	Grid,
-	Image
+	Input
 } from "semantic-ui-react";
 import { bake_cookie } from "sfcookies";
 
@@ -96,7 +96,7 @@ class UserSingup extends Component {
 									</Grid.Column>
 
 									<Grid.Column>
-										<input 
+										<Input 
 											placeholder="First Name" 
 											type="text" 
 											name="firstName" 
@@ -123,7 +123,7 @@ class UserSingup extends Component {
 										<label>Last Name</label>
 									</Grid.Column>
 									<Grid.Column>
-										<input 
+										<Input 
 											placeholder="Last Name" 
 											type="text" 
 											name="lastName" 
@@ -148,7 +148,7 @@ class UserSingup extends Component {
 									</Grid.Column>
 
 									<Grid.Column>
-										<input 
+										<Input 
 											placeholder="Password" 
 											type="password" 
 											name="password" 
@@ -173,7 +173,7 @@ class UserSingup extends Component {
 									</Grid.Column>
 
 									<Grid.Column>
-										<input 
+										<Input 
 											placeholder="Confirm Password" 
 											type="password" 
 											name="confirmPassword" 
@@ -198,7 +198,7 @@ class UserSingup extends Component {
 									</Grid.Column>
 
 									<Grid.Column>
-										<input 
+										<Input 
 											placeholder="Email" 
 											type="email" 
 											name="email" 
@@ -208,6 +208,7 @@ class UserSingup extends Component {
 											minLength= "5" 
 											maxLength= "30" 
 											required
+											width = "20"
 										/>
 									</Grid.Column>
 								</Grid.Row>

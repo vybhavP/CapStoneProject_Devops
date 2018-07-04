@@ -7,7 +7,8 @@ import {
 	Divider,
 	Input,
 	Icon,
-	Checkbox
+	Checkbox,
+	Grid
 } from "semantic-ui-react";
 import { read_cookie } from "sfcookies";
 
@@ -108,37 +109,59 @@ export default class Login extends React.Component {
 					ref="admin_form" 
 					onSubmit={this.handleAdminFormSubmit.bind(this)}
 				>
-					<Form.Field>
-						<label>Email</label>
-						<Input 
-							placeholder="email" 
-							type="email" 
-							name="email" 
-							value={this.state.email} 
-							onChange={this.handleEmailChange.bind(this)} 
-							ref="email" 
-							iconPosition = 'left'
-						>
-							<Icon name = 'at' color="green"/>
-							<input/>
-						</Input>
-					</Form.Field>
-					<Form.Field>
-						<label>Password</label>
-						<Input 
-							placeholder="Password" 
-							type="password" 
-							name="Password" 
-							value={this.state.password} 
-							onChange={this.handlePasswordChange.bind(this)} 
-							ref="password" 
-							iconPosition = 'left'
-						>
-							<Icon name = 'user secret' color = "teal" />
-							<input />
-						</Input>
-					</Form.Field>
-					<Form.Field>
+					<Form.Group widths = 'equal'>
+						<Form.Field inline>
+							<Grid columns={3} divided>
+								<Grid.Row>
+									<Grid.Column>
+										<label>Email</label>
+									</Grid.Column>
+
+									<Grid.Column>
+										<Input 
+											placeholder="email" 
+											type="email" 
+											name="email" 
+											value={this.state.email} 
+											onChange={this.handleEmailChange.bind(this)} 
+											ref="email" 
+											iconPosition = 'left'
+										>
+											<Icon name = 'at' color="green"/>
+											<input/>
+										</Input>
+									</Grid.Column>
+								</Grid.Row>
+							</Grid>	
+						</Form.Field>
+					</Form.Group>
+					<Form.Group widths = 'equal'>
+						<Form.Field inline>
+							<Grid columns={3} divided>
+								<Grid.Row>
+									<Grid.Column>
+										<label>Password</label>
+									</Grid.Column>
+
+									<Grid.Column>
+										<Input 
+											placeholder="Password" 
+											type="password" 
+											name="Password" 
+											value={this.state.password} 
+											onChange={this.handlePasswordChange.bind(this)} 
+											ref="password" 
+											iconPosition = 'left'
+										>
+											<Icon name = 'user secret' color = "teal" />
+											<input />
+										</Input>
+									</Grid.Column>
+								</Grid.Row>
+							</Grid>
+						</Form.Field>
+					</Form.Group>
+					<Form.Field inline>
 						<Checkbox label="I agree to the Terms and Conditions" />
 					</Form.Field>
 					<Button 
