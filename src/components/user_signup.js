@@ -5,7 +5,9 @@ import ReactDOM from "react-dom";
 import {
 	Form,
 	Button,
-	Label
+	Label,
+	Grid,
+	Image
 } from "semantic-ui-react";
 import { bake_cookie } from "sfcookies";
 
@@ -85,98 +87,157 @@ class UserSingup extends Component {
 					ref="signup_form" 
 					onSubmit={this.handleSignup.bind(this)}
 				>
-					<Form.Field inline>
-						<label>First Name</label>
-						
-						<input 
-							placeholder="First Name" 
-							type="text" 
-							name="firstName" 
-							value={this.state.firstname} 
-							ref="firstname" 
-							onChange={this.handleFirstNameChange.bind(this)} 
-							minLength= "3" 
-							maxLength= "20" 
-							required
-						/>
-						<Label basic color='red' pointing='left' className="hidden">
-							username must be of 3 characters or more
-						</Label>
-					</Form.Field>
-					<Form.Field inline>
-						<label>Last Name</label>
-						<input 
-							placeholder="Last Name" 
-							type="text" 
-							name="lastName" 
-							value={this.state.lastname} 
-							ref="lastname" 
-							onChange={this.handleLastNameChange.bind(this)} 
-							minLength= "3" 
-							maxLength= "20" 
-							required
-						/>
-					</Form.Field>
-					<Form.Field inline>
-						<label>Password</label>
-						<input 
-							placeholder="Password" 
-							type="password" 
-							name="password" 
-							value={this.state.password} 
-							ref="password" 
-							onChange={this.handlePasswordChange.bind(this)} 
-							minLength= "3" 
-							maxLength= "20" 
-							required
-						/>
-					</Form.Field>
-					<Form.Field inline>
-						<label>Confirm Password</label>
-						<input 
-							placeholder="Confirm Password" 
-							type="password" 
-							name="confirmPassword" 
-							value={this.state.confirmPassword} 
-							ef="confirmPassword"  
-							onChange={this.handleConfirmPasswordChange.bind(this)} 
-							minLength= "3" 
-							maxLength= "20" 
-							required
-						/>
-					</Form.Field>
-					<Form.Field inline>
-						<label>EmailID</label>
-						<input 
-							placeholder="Email" 
-							type="email" 
-							name="email" 
-							value={this.state.email} 
-							ref="userName" 
-							onChange={this.handleEmailChange.bind(this)} 
-							minLength= "5" 
-							maxLength= "30" 
-							required
-						/>
-					</Form.Field>
+					<Form.Group widths = 'equal'>
+						<Form.Field inline>
+							<Grid columns={3} divided>
+								<Grid.Row>
+									<Grid.Column>
+										<label>First Name</label>
+									</Grid.Column>
+
+									<Grid.Column>
+										<input 
+											placeholder="First Name" 
+											type="text" 
+											name="firstName" 
+											value={this.state.firstname} 
+											ref="firstname" 
+											onChange={this.handleFirstNameChange.bind(this)} 
+											minLength= "3" 
+											maxLength= "20" 
+											required
+										/>
+										<Label basic color='red' pointing='left' className="hidden">
+											username must be of 3 characters or more
+										</Label>
+									</Grid.Column>
+								</Grid.Row>
+							</Grid>							
+						</Form.Field>
+					</Form.Group>	
+					<Form.Group widths = 'equal'>
+						<Form.Field inline>
+							<Grid columns={3} divided>
+								<Grid.Row>
+									<Grid.Column>
+										<label>Last Name</label>
+									</Grid.Column>
+									<Grid.Column>
+										<input 
+											placeholder="Last Name" 
+											type="text" 
+											name="lastName" 
+											value={this.state.lastname} 
+											ref="lastname" 
+											onChange={this.handleLastNameChange.bind(this)} 
+											minLength= "3" 
+											maxLength= "20" 
+											required
+										/>
+									</Grid.Column>
+								</Grid.Row>
+							</Grid>		
+						</Form.Field>
+					</Form.Group>
+					<Form.Group widths = 'equal'>
+						<Form.Field inline>
+							<Grid columns={3} divided>
+								<Grid.Row>
+									<Grid.Column>
+										<label>Password</label>
+									</Grid.Column>
+
+									<Grid.Column>
+										<input 
+											placeholder="Password" 
+											type="password" 
+											name="password" 
+											value={this.state.password} 
+											ref="password" 
+											onChange={this.handlePasswordChange.bind(this)} 
+											minLength= "3" 
+											maxLength= "20" 
+											required
+										/>
+									</Grid.Column>
+								</Grid.Row>
+							</Grid>	
+						</Form.Field>
+					</Form.Group>
+					<Form.Group widths = 'equal'>
+						<Form.Field inline>
+							<Grid columns={3} divided>
+								<Grid.Row>
+									<Grid.Column>
+										<label>Confirm Password</label>
+									</Grid.Column>
+
+									<Grid.Column>
+										<input 
+											placeholder="Confirm Password" 
+											type="password" 
+											name="confirmPassword" 
+											value={this.state.confirmPassword} 
+											ef="confirmPassword"  
+											onChange={this.handleConfirmPasswordChange.bind(this)} 
+											minLength= "3" 
+											maxLength= "20" 
+											required
+										/>
+									</Grid.Column>
+								</Grid.Row>
+							</Grid>	
+						</Form.Field>
+					</Form.Group>
+					<Form.Group widths = 'equal'>
+						<Form.Field inline>
+							<Grid columns={3} divided>
+								<Grid.Row>
+									<Grid.Column>
+										<label>EmailID</label>
+									</Grid.Column>
+
+									<Grid.Column>
+										<input 
+											placeholder="Email" 
+											type="email" 
+											name="email" 
+											value={this.state.email} 
+											ref="userName" 
+											onChange={this.handleEmailChange.bind(this)} 
+											minLength= "5" 
+											maxLength= "30" 
+											required
+										/>
+									</Grid.Column>
+								</Grid.Row>
+							</Grid>	
+						</Form.Field>
+					</Form.Group>
 					{/*<Form.Select fluid label="Gender" options={options} placeholder="Gender" onChange={ this.handleGender.bind(this) }/>*/}
 					{/* <Button type="submit">Submit</Button> */}
-					<Button 
-						className="signup-btn"
-						type="submit" 
-						color="purple"
-					>
-						Signup
-					</Button>
-					<Button 
-						type="reset" 
-						ref="resetButton" 
-						onClick={this.clearFormValues.bind(this)} 
-						color="grey"
-						className="resetForm"
-					>
-						Reset
-					</Button>
+					<Grid columns={1} divided>
+						<Grid.Row>
+							<Grid.Column>
+								<Button 
+									className="signup-btn"
+									type="submit" 
+									color="purple"
+								>
+									Signup
+								</Button>
+								<Button 
+									type="reset" 
+									ref="resetButton" 
+									onClick={this.clearFormValues.bind(this)} 
+									color="grey"
+									className="resetForm"
+								>
+									Reset
+								</Button>
+							</Grid.Column>
+						</Grid.Row>
+					</Grid>				
 				</Form>
 			</div>
 		);}
