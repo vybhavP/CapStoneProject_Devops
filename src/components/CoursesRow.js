@@ -54,7 +54,7 @@ export const DeleteCoursesRow = class DeleteCoursesRow extends React.Component {
 		};
 	}
 	
-	onDelEvent() {
+	onDelEvent = () => {
 		this.setState({ open: true });
 		// this.props.onDelEvent(this.props.course);
 	}
@@ -130,7 +130,7 @@ export const DeleteCoursesRow = class DeleteCoursesRow extends React.Component {
 };
   
 export const UpdateCoursesRow = class UpdateCoursesRow extends React.Component {
-	onDelEvent() {
+	onDelEvent = () => {
 		this.props.onDelEvent(this.props.course);
 	}
 	render() {
@@ -176,7 +176,7 @@ export const UpdateCoursesRow = class UpdateCoursesRow extends React.Component {
 
 
 export const ViewCoursesRow = class ViewCoursesRow extends React.Component {
-	onDelEvent() {
+	onDelEvent = () => {
 		this.props.onDelEvent(this.props.course);
 	}
 	render() {

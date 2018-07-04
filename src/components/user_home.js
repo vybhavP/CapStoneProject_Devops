@@ -5,7 +5,7 @@ import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export default class Login extends React.Component {
-	handleLogout(){
+	handleLogout = () => {
 		this.props.history.push("/");
 	}
 	render() {

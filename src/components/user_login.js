@@ -17,29 +17,29 @@ export default class Login extends React.Component {
 			returnForgotPassword: "" 
 		};
 	}
-	componentDidMount(){
+	componentDidMount = () => {
 		this.setState({ users: read_cookie(cookie_key) });
 		// console.log(read_cookie(cookie_key));
 		// delete_cookie(cookie_key);
 	}
-	handleEmailChange(email) {
+	handleEmailChange = (email) => {
 		this.setState({ 
 			email: email.target.value 
 		});
 	}
-	handleForgotEmailChange(forgotEmail) {
+	handleForgotEmailChange = (forgotEmail) => {
 		this.setState({ 
 			forgotEmail: forgotEmail.target.value 
 		});
 	}
-	handlePasswordChange(password) {
+	handlePasswordChange = (password) => {
 		// console.log(password.target.value);
 		this.setState({ 
 			password: password.target.value 
 		});
 	}
 
-	handleAdminFormSubmit() {
+	handleAdminFormSubmit = () => {
 		const { email, password, users } = this.state;
 		if(this.state.users.length){
 			for( let i = 0; i< this.state.users.length; i++){
@@ -67,7 +67,7 @@ export default class Login extends React.Component {
 		}
 	}
 
-	clearFormValues() {
+	clearFormValues = () => {
 		this.setState({ 
 			email: "", 
 			password: "" 
@@ -75,7 +75,7 @@ export default class Login extends React.Component {
 		ReactDOM.findDOMNode(this.refs.email).focus();
 	}
 
-	handleForgotPassword(){
+	handleForgotPassword = () => {
 		const listOfUsers = read_cookie(cookie_key);
 		let existingUser = false;
 		for(var i=0; i<listOfUsers.length;i++){

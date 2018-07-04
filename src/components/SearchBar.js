@@ -3,7 +3,7 @@ import React from "react";
 import { Form } from "semantic-ui-react";
 
 export default class SearchBar extends React.Component {
-	handleChange() {
+	handleChange = () => {
 		this.props.onUserInput(this.refs.filterTextInput.value);
 	}
 	render() {

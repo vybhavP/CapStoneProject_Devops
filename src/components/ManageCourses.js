@@ -14,18 +14,18 @@ export const AddCourses =  class AddCourses extends React.Component {
 	// 	this.setState({ courses: read_cookie(cookie_key) });
 	// 	console.log("Componet Did mount" + this.state.courses)
 	// }
-	handleUserInput(filterText) {
+	handleUserInput = (filterText) => {
 		this.setState({ 
 			filterText: filterText 
 		});
 	}
-	handleRowDel(course) {
+	handleRowDel = (course) => {
 		var index = this.state.courses.indexOf(course);
 		this.state.courses.splice(index, 1);
 		this.setState(this.state.courses);
 	}
 
-	handleAddEvent() {
+	handleAddEvent = () => {
 		var id = (+ new Date() + Math.floor(Math.random() * 999999)).toString(36);
 		var course = {
 			id: id,
@@ -38,7 +38,7 @@ export const AddCourses =  class AddCourses extends React.Component {
 		this.setState(this.state.courses);
 	}
   
-	handleSave() {
+	handleSave = () => {
 		let containEmptyValues = false;    
 		var courses = this.state.courses.slice();
 		// for(var i = 0; i< courses.length; i++){
@@ -62,7 +62,7 @@ export const AddCourses =  class AddCourses extends React.Component {
 			this.setState({ courses: [] });
 		}
 	}
-	handleAddCoursesTable(evt) {
+	handleAddCoursesTable = (evt) =>{
 		var item = {
 			id: evt.target.id,
 			name: evt.target.name,
@@ -80,7 +80,7 @@ export const AddCourses =  class AddCourses extends React.Component {
 		this.setState({ 
 			courses: newCourses 
 		});
-	};
+	}
 	close = () => {
 		this.setState({ open: false });
 	}
@@ -122,22 +122,22 @@ export const DeleteCourses = class DeleteCourses extends React.Component {
 		this.state.courses = [];
 		this.state.filterText = ""; 
 	}
-	componentDidMount(){
+	componentDidMount = () => {
 		this.setState({ courses: read_cookie(cookie_key) });
 	}
-	handleUserInput(filterText) {
+	handleUserInput = (filterText) => {
 		this.setState({ 
 			filterText: filterText 
 		});
 	}
-	handleRowDel(course) {
+	handleRowDel = (course) => {
 		var index = this.state.courses.indexOf(course);
 		this.state.courses.splice(index, 1);
 		this.setState(this.state.courses);
 		this.setState({isDeleted: true});
 		bake_cookie(cookie_key, this.state.courses);
 	}  
-	handleDeleteCoursesTable(evt) {
+	handleDeleteCoursesTable = (evt) => {
 		var item = {
 			id: evt.target.id,
 			name: evt.target.name,
@@ -180,20 +180,20 @@ export const UpdateCourses = class UpdateCourses extends React.Component {
 		super(props);
 		this.state = { open: false, filterText: "", courses: []};
 	}
-	componentDidMount(){
+	componentDidMount = () => {
 		this.setState({ courses: read_cookie(cookie_key) });
 	}
-	handleUserInput(filterText) {
+	handleUserInput = (filterText) => {
 		this.setState({
 			filterText: filterText
 		});
 	}
-	handleRowDel(course) {
+	handleRowDel = (course) => {
 		var index = this.state.courses.indexOf(course);
 		this.state.courses.splice(index, 1);
 		this.setState(this.state.courses);
 	}
-	handleUpdateCoursesTable(evt) {
+	handleUpdateCoursesTable = (evt) => {
 		var item = {
 			id: evt.target.id,
 			name: evt.target.name,
@@ -210,7 +210,7 @@ export const UpdateCourses = class UpdateCourses extends React.Component {
 		});
 		this.setState({courses:newCourses});
 	}
-	handleSaveUpdatedCourses() {
+	handleSaveUpdatedCourses = () =>{
 		bake_cookie(cookie_key, this.state.courses);
 		this.setState({ size: "tiny", open: true });
 	}
@@ -254,22 +254,22 @@ export const ViewCourses = class ViewCourses extends React.Component {
 		this.state.courses = [];
 		this.state.filterText = ""; 
 	}
-	componentDidMount(){
+	componentDidMount = () => {
 		this.setState({ courses: read_cookie(cookie_key) });
 	}
-	handleUserInput(filterText) {
+	handleUserInput = (filterText) => {
 		this.setState({ 
 			filterText: filterText 
 		});
 	}
-	handleRowDel(course) {
+	handleRowDel = (course) => {
 		var index = this.state.courses.indexOf(course);
 		this.state.courses.splice(index, 1);
 		this.setState(this.state.courses);
 		this.setState({isDeleted: true});
 		bake_cookie(cookie_key, this.state.courses);
 	}  
-	handleViewCoursesTable(evt) {
+	handleViewCoursesTable = (evt) => {
 		var item = {
 			id: evt.target.id,
 			name: evt.target.name,

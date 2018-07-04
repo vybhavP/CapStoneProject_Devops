@@ -22,42 +22,42 @@ class UserSingup extends Component {
 
 	//handleChange = (e, { value }) => this.setState({ value })
 
-	handleFirstNameChange(firstname) {
+	handleFirstNameChange = (firstname) => {
 		this.setState({ 
 			firstname: firstname.target.value 
 		});
 		// console.log(this.state.firstname);
 	}
 
-	handleLastNameChange(lastname) {
+	handleLastNameChange = (lastname) => {
 		this.setState({ 
 			lastname: lastname.target.value 
 		});
 		// console.log(this.state.lastname);
 	}
 
-	handlePasswordChange(password) {
+	handlePasswordChange = (password) => {
 		this.setState({ 
 			password: password.target.value 
 		});
 		// console.log(this.state.password);
 	}
 
-	handleConfirmPasswordChange(confirmPassword) {
+	handleConfirmPasswordChange = (confirmPassword) => {
 		this.setState({ 
 			confirmPassword: confirmPassword.target.value 
 		});
 		// console.log(this.state.confirmPassword);
 	}
 
-	handleEmailChange(email) {
+	handleEmailChange = (email) => {
 		this.setState({ 
 			email: email.target.value 
 		});
 		// console.log(this.state.email);
 	}
 
-	handleSignup() {
+	handleSignup = () => {
 
 		if(this.state.password !== this.state.confirmPassword){
 			alert("Password and confirm passwords should match");
@@ -77,7 +77,7 @@ class UserSingup extends Component {
 		}
 	}
 
-	clearFormValues() {
+	clearFormValues = () => {
     
 		// this.setState({ 
 		// 	firstname: "", 
