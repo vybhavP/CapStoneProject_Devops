@@ -62,7 +62,6 @@ class UserSingup extends Component {
 			alert("Password and confirm passwords should match");
 		}
 		else{
-			alert("Signedup successfully \n" + this.state.firstname + "\n" + this.state.lastname + "\n" + this.state.password + "\n" + this.state.confirmPassword + "\n" + this.state.email);
 			let user = { 
 				firstName : this.state.firstname, 
 				lastName : this.state.lastname,
