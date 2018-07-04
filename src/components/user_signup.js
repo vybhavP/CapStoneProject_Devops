@@ -89,8 +89,11 @@ class UserSingup extends Component {
 				>
 					<Form.Group widths = 'equal'>
 						<Form.Field inline>
-							<Grid columns={3} divided>
+							<Grid columns={8}>
 								<Grid.Row>
+
+									<Grid.Column width={6}></Grid.Column>
+
 									<Grid.Column>
 										<label>First Name</label>
 									</Grid.Column>
@@ -117,11 +120,15 @@ class UserSingup extends Component {
 					</Form.Group>	
 					<Form.Group widths = 'equal'>
 						<Form.Field inline>
-							<Grid columns={3} divided>
+							<Grid columns={8}>
 								<Grid.Row>
+
+									<Grid.Column width={6}></Grid.Column>
+
 									<Grid.Column>
 										<label>Last Name</label>
 									</Grid.Column>
+
 									<Grid.Column>
 										<Input 
 											placeholder="Last Name" 
@@ -141,8 +148,11 @@ class UserSingup extends Component {
 					</Form.Group>
 					<Form.Group widths = 'equal'>
 						<Form.Field inline>
-							<Grid columns={3} divided>
+							<Grid columns={8}>
 								<Grid.Row>
+
+									<Grid.Column width={6}></Grid.Column>
+
 									<Grid.Column>
 										<label>Password</label>
 									</Grid.Column>
@@ -166,8 +176,11 @@ class UserSingup extends Component {
 					</Form.Group>
 					<Form.Group widths = 'equal'>
 						<Form.Field inline>
-							<Grid columns={3} divided>
+							<Grid columns={8}>
 								<Grid.Row>
+
+									<Grid.Column width={6}></Grid.Column>
+
 									<Grid.Column>
 										<label>Confirm Password</label>
 									</Grid.Column>
@@ -191,8 +204,11 @@ class UserSingup extends Component {
 					</Form.Group>
 					<Form.Group widths = 'equal'>
 						<Form.Field inline>
-							<Grid columns={3} divided>
+							<Grid columns={8}>
 								<Grid.Row>
+
+									<Grid.Column width={6}></Grid.Column>
+
 									<Grid.Column>
 										<label>EmailID</label>
 									</Grid.Column>
@@ -217,7 +233,7 @@ class UserSingup extends Component {
 					</Form.Group>
 					{/*<Form.Select fluid label="Gender" options={options} placeholder="Gender" onChange={ this.handleGender.bind(this) }/>*/}
 					{/* <Button type="submit">Submit</Button> */}
-					<Grid columns={1} divided>
+					<Grid columns={1}  >
 						<Grid.Row>
 							<Grid.Column>
 								<Button 
