@@ -46,21 +46,27 @@ export const AddCoursesRow = class AddCoursesRow extends React.Component {
 };
 
 export const DeleteCoursesRow = class DeleteCoursesRow extends React.Component {
-	state = { open: false, result: 'show the modal to capture a result' }
+	constructor(props){
+		super(props);
+		this.state = {
+			open: false,
+			result: "show the modal to capture a result"
+		};
+	}
 	
 	onDelEvent() {
-		this.setState({ open: true })
+		this.setState({ open: true });
 		// this.props.onDelEvent(this.props.course);
 	}
 	handleConfirm = () => {
-		this.setState({ result: 'confirmed', open: false });
+		this.setState({ result: "confirmed", open: false });
 		this.props.onDelEvent(this.props.course);
 	}
-  	handleCancel = () => {
-		this.setState({ result: 'cancelled', open: false });
+	handleCancel = () => {
+		this.setState({ result: "cancelled", open: false });
 	}
 	render() {
-		const { open } = this.state
+		const { open } = this.state;
 		return (
 			<Table.Row 
 				className="eachRow"
@@ -102,9 +108,9 @@ export const DeleteCoursesRow = class DeleteCoursesRow extends React.Component {
 					className="del-cell" 
 					textAlign="center"
 				>
-				{/* <p>
-					Result: <em>{result}</em>
-				</p> */}
+					{/* <p>
+						Result: <em>{result}</em>
+					</p> */}
 					<Input 
 						error 
 						type="button" 
@@ -113,7 +119,7 @@ export const DeleteCoursesRow = class DeleteCoursesRow extends React.Component {
 						className="del-btn" 
 					/>
 					<Confirm 
-						header='Confirm'
+						header="Confirm"
 						open={open} 
 						onCancel={this.handleCancel} 
 						onConfirm={this.handleConfirm} 

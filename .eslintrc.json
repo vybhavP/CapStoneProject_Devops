@@ -33,6 +33,5 @@
             "always"
         ],
         "react/jsx-uses-vars": [2]
-    }
-    
+    }    
 }

@@ -3,7 +3,7 @@ import React from "react";
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import { Form, Button } from "semantic-ui-react";
-import { bake_cookie } from 'sfcookies';
+import { bake_cookie } from "sfcookies";
 
 const cookie_key = "Users";
 
@@ -65,12 +65,12 @@ class UserSingup extends Component {
 		else{
 			alert("Signedup successfully \n" + this.state.firstname + "\n" + this.state.lastname + "\n" + this.state.password + "\n" + this.state.confirmPassword + "\n" + this.state.email);
 			let user = { 
-					firstName : this.state.firstname, 
-					lastName : this.state.lastname,
-					password : this.state.password,
-					confirmPassword : this.state.confirmPassword,
-					email : this.state.email	
-				}
+				firstName : this.state.firstname, 
+				lastName : this.state.lastname,
+				password : this.state.password,
+				confirmPassword : this.state.confirmPassword,
+				email : this.state.email	
+			};
 			this.state.users.push(user);
 			bake_cookie(cookie_key, this.state.users);
 			this.props.history.push("/user_login");
@@ -99,15 +99,15 @@ class UserSingup extends Component {
 					<Form.Field>
 						<label>First Name</label>
 						<input 
-							placeholder='First Name' 
-							type='text' 
+							placeholder="First Name" 
+							type="text" 
 							name="firstName" value={this.state.firstname} ref="firstname" onChange={this.handleFirstNameChange.bind(this)} minLength= "3" maxLength= "20" required/>
 					</Form.Field>
 					<Form.Field>
 						<label>Last Name</label>
 						<input 
-							placeholder='Last Name' 
-							type='text' 
+							placeholder="Last Name" 
+							type="text" 
 							name="lastName" 
 							value={this.state.lastname} 
 							ref="lastname" 
@@ -120,8 +120,8 @@ class UserSingup extends Component {
 					<Form.Field>
 						<label>Password</label>
 						<input 
-							placeholder='Password' 
-							type='password' 
+							placeholder="Password" 
+							type="password" 
 							name="password" 
 							value={this.state.password} 
 							ref="password" 
@@ -134,8 +134,8 @@ class UserSingup extends Component {
 					<Form.Field>
 						<label>Confirm Password</label>
 						<input 
-							placeholder='Confirm Password' 
-							type='password' 
+							placeholder="Confirm Password" 
+							type="password" 
 							name="confirmPassword" 
 							value={this.state.confirmPassword} 
 							ef="confirmPassword"  
@@ -148,8 +148,8 @@ class UserSingup extends Component {
 					<Form.Field>
 						<label>EmailID</label>
 						<input 
-							placeholder='Email' 
-							type='email' 
+							placeholder="Email" 
+							type="email" 
 							name="email" 
 							value={this.state.email} 
 							ref="userName" 
@@ -159,20 +159,20 @@ class UserSingup extends Component {
 							required
 						/>
 					</Form.Field>
-					{/*<Form.Select fluid label='Gender' options={options} placeholder='Gender' onChange={ this.handleGender.bind(this) }/>*/}
-					{/* <Button type='submit'>Submit</Button> */}
+					{/*<Form.Select fluid label="Gender" options={options} placeholder="Gender" onChange={ this.handleGender.bind(this) }/>*/}
+					{/* <Button type="submit">Submit</Button> */}
 					<Button 
-						className='signup-btn'
-						type='submit' 
-						color='purple'
+						className="signup-btn"
+						type="submit" 
+						color="purple"
 					>
 						Signup
 					</Button>
 					<Button 
-						type='reset' 
+						type="reset" 
 						ref="resetButton" 
 						onClick={this.clearFormValues.bind(this)} 
-						color='grey'
+						color="grey"
 						className="resetForm"
 					>
 						Reset

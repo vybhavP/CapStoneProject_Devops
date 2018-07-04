@@ -1,19 +1,19 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import { AddCoursesTable, DeleteCoursesTable, UpdateCoursesTable, ViewCoursesTable } from "./CoursesTable";
-import { bake_cookie, read_cookie } from 'sfcookies';
-import { Button, Modal } from 'semantic-ui-react';
+import { bake_cookie, read_cookie } from "sfcookies";
+import { Button, Modal } from "semantic-ui-react";
 const cookie_key = "Courses";
 
 export const AddCourses =  class AddCourses extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { open: false, filterText: '', courses: []};
+		this.state = { open: false, filterText: "", courses: []};
 	}
-	componentDidMount(){
-		// this.setState({ courses: read_cookie(cookie_key) });
-		console.log("Componet Did mount" + this.state.courses)
-	}
+	// componentDidMount(){
+	// 	this.setState({ courses: read_cookie(cookie_key) });
+	// 	console.log("Componet Did mount" + this.state.courses)
+	// }
 	handleUserInput(filterText) {
 		this.setState({ 
 			filterText: filterText 
@@ -45,20 +45,20 @@ export const AddCourses =  class AddCourses extends React.Component {
 		// 	alert(courses[i].id + "\n" + courses[i].name + "\n" + courses[i].price + "\n" + courses[i].category + "\n" + courses[i].description);
 		// }
 		for(var i = 0; i< courses.length; i++){
-			if(courses[i].id === '' || courses[i].name === '' || courses[i].price === '' || courses[i].category === '' || courses[i].description === ''){
+			if(courses[i].id === "" || courses[i].name === "" || courses[i].price === "" || courses[i].category === "" || courses[i].description === ""){
 				containEmptyValues = true;
 			}
 		}
 		if(containEmptyValues === true){
 			alert("Plesase fill all the fields and then save");
-			//this.setState({ size: 'tiny', open: true });
+			//this.setState({ size: "tiny", open: true });
 		}
 		else if(this.state.courses.length < 0){
-			alert("Please add atlease one course to save")
+			alert("Please add atlease one course to save");
 		}
 		else{
 			bake_cookie(cookie_key, this.state.courses);
-			this.setState({ size: 'tiny', open: true });
+			this.setState({ size: "tiny", open: true });
 			this.setState({ courses: [] });
 		}
 	}
@@ -80,10 +80,12 @@ export const AddCourses =  class AddCourses extends React.Component {
 		this.setState({ 
 			courses: newCourses 
 		});
+	};
+	close = () => {
+		this.setState({ open: false });
 	}
-	close = () => this.setState({ open: false });
 	render() {
-		const { open, size } = this.state
+		const { open, size } = this.state;
 		return (
 			<div>
 				<SearchBar 
@@ -104,7 +106,7 @@ export const AddCourses =  class AddCourses extends React.Component {
 						<p>Saved Courses successfully</p>
 					</Modal.Content>
 					<Modal.Actions>
-						<Button onClick={this.close} positive abelPosition='right' content='Ok'/>
+						<Button onClick={this.close} positive abelPosition="right" content="Ok"/>
 					</Modal.Actions>
 				</Modal>
 			</div>
@@ -169,13 +171,14 @@ export const DeleteCourses = class DeleteCourses extends React.Component {
 					enableSave={this.state.isDeleted} 
 				/>
 			</div>
-	)};
+		);
+	}
 };
 
 export const UpdateCourses = class UpdateCourses extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { open: false, filterText: '', courses: []};
+		this.state = { open: false, filterText: "", courses: []};
 	}
 	componentDidMount(){
 		this.setState({ courses: read_cookie(cookie_key) });
@@ -209,11 +212,13 @@ export const UpdateCourses = class UpdateCourses extends React.Component {
 	}
 	handleSaveUpdatedCourses() {
 		bake_cookie(cookie_key, this.state.courses);
-		this.setState({ size: 'tiny', open: true });
+		this.setState({ size: "tiny", open: true });
 	}
-	close = () => this.setState({ open: false });
+	close = () => {
+		this.setState({ open: false });
+	}
 	render() {
-		const { open, size } = this.state
+		const { open, size } = this.state;
 		return (
 			<div>
 				<SearchBar 
@@ -233,7 +238,7 @@ export const UpdateCourses = class UpdateCourses extends React.Component {
 						<p>Updated Courses successfully</p>
 					</Modal.Content>
 					<Modal.Actions>
-						<Button onClick={this.close} positive abelPosition='right' content='Ok'/>
+						<Button onClick={this.close} positive abelPosition="right" content="Ok"/>
 					</Modal.Actions>
 				</Modal>
 			</div>
@@ -298,5 +303,6 @@ export const ViewCourses = class ViewCourses extends React.Component {
 					enableSave={this.state.isDeleted} 
 				/>
 			</div>
-	)};
+		);
+	}
 };

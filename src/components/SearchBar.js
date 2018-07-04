@@ -1,3 +1,4 @@
+/*eslint-disable no-unused-vars*/
 import React from "react";
 import { Form } from "semantic-ui-react";
 
@@ -14,7 +15,7 @@ export default class SearchBar extends React.Component {
 							type="text" 
 							placeholder="Search for your courses..." 
 							width={2} 
-							value={this.props.filterText || ''} 
+							value={this.props.filterText || ""} 
 							ref="filterTextInput" 
 							onChange={this.handleChange.bind(this)}
 						/>

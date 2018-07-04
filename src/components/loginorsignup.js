@@ -9,7 +9,7 @@ const LoginOrSignup = () => (
 			to="/user_login"
 		>
 			<Button 
-				color='green' 
+				color="green" 
 				fluid
 			>
                 Login
@@ -24,7 +24,7 @@ const LoginOrSignup = () => (
 			to="/user_signup"
 		>
 			<Button 
-				color='olive' 
+				color="olive" 
 				fluid
 			>
                 Sign Up Now

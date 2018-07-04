@@ -5,12 +5,12 @@ export const AddCourses = class AddCourses extends React.Component {
 	render() {
 		return (
 			<Table.Cell 
-				textAlign='center' 
+				textAlign="center" 
 				center 
 				aligned
 			>
 				<Input 
-					type='text' 
+					type="text" 
 					name={this.props.cellData.type} 
 					id={this.props.cellData.id} 
 					value={this.props.cellData.value} 
@@ -27,8 +27,8 @@ export const DeleteCourses = class DeleteCourses extends React.Component {
 	render() {
 		return (
 			<Table.Cell 
-				textAlign='center'>
-				{/*<Input type='text' name={this.props.cellData.type} id={this.props.cellData.id} value={this.props.cellData.value} disabled red/>*/}
+				textAlign="center">
+				{/*<Input type="text" name={this.props.cellData.type} id={this.props.cellData.id} value={this.props.cellData.value} disabled red/>*/}
 				{this.props.cellData.value}
 			</Table.Cell>
 		);
@@ -39,12 +39,12 @@ export const UpdateCourses = class UpdateCourses extends React.Component {
 	render() {
 		return (
 			<Table.Cell 
-				textAlign='center' 
+				textAlign="center" 
 				center 
 				aligned
 			>
 				<Input 
-					type='text' 
+					type="text" 
 					name={this.props.cellData.type} 
 					id={this.props.cellData.id} 
 					value={this.props.cellData.value} 
@@ -63,7 +63,7 @@ export const ViewCourses = class ViewCourses extends React.Component {
 	render() {
 		return (
 			<Table.Cell 
-				textAlign='center'>
+				textAlign="center">
 				{this.props.cellData.value}
 			</Table.Cell>
 		);

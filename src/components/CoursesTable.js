@@ -25,7 +25,7 @@ export const AddCoursesTable = class AddCoursesTable extends React.Component {
 				{/* Table for Add courses */}
 				<Table celled>
 					<Table.Header>
-						<Table.Row textAlign='center'>
+						<Table.Row textAlign="center">
 							<Table.HeaderCell>Course Name</Table.HeaderCell>
 							<Table.HeaderCell>Price</Table.HeaderCell>
 							<Table.HeaderCell>Category</Table.HeaderCell>
@@ -37,7 +37,7 @@ export const AddCoursesTable = class AddCoursesTable extends React.Component {
 					</Table.Body>
 				</Table>
 
-				{/* 'Add' button to add courses*/}
+				{/* "Add" button to add courses*/}
 				<Button 
 					primary 
 					onClick={this.props.onRowAdd} 
@@ -46,7 +46,7 @@ export const AddCoursesTable = class AddCoursesTable extends React.Component {
           Add
 				</Button>
 
-				{/* 'Save' button to save courses */}
+				{/* "Save" button to save courses */}
 				<Button 
 					primary 
 					onClick={this.props.onSave} 
@@ -84,7 +84,7 @@ export const DeleteCoursesTable = class DeleteCoursesTable extends React.Compone
 			<div>
 				<Table celled>
 					<Table.Header>
-						<Table.Row textAlign='center'>
+						<Table.Row textAlign="center">
 							<Table.HeaderCell>Name</Table.HeaderCell>
 							<Table.HeaderCell>Price</Table.HeaderCell>
 							<Table.HeaderCell>Category</Table.HeaderCell>
@@ -93,7 +93,7 @@ export const DeleteCoursesTable = class DeleteCoursesTable extends React.Compone
 						</Table.Row>
 					</Table.Header>
 					<Table.Body>
-					{course.length > 0 ? course : <h1 align='center'>No Courses to delete</h1> }
+						{course.length > 0 ? course : <h1 align="center">No Courses to delete</h1> }
 					</Table.Body>
 				</Table>
 			</div>
@@ -127,7 +127,7 @@ export const UpdateCoursesTable = class UpdateCoursesTable extends React.Compone
           </div>*/}
 				<Table celled>
 					<Table.Header>
-						<Table.Row textAlign='center'>
+						<Table.Row textAlign="center">
 							<Table.HeaderCell>Name</Table.HeaderCell>
 							<Table.HeaderCell>price</Table.HeaderCell>
 							<Table.HeaderCell>category</Table.HeaderCell>
@@ -135,7 +135,7 @@ export const UpdateCoursesTable = class UpdateCoursesTable extends React.Compone
 						</Table.Row>
 					</Table.Header>
 					<Table.Body>
-						{course.length > 0 ? course : <h1 align='center'>No Courses to update</h1> }
+						{course.length > 0 ? course : <h1 align="center">No Courses to update</h1> }
 					</Table.Body>       
 				</Table>
 				<Button color="green" className="btn btn-success pull-right" onClick={this.props.saveUpdatedCourses}>Update</Button>
@@ -168,7 +168,7 @@ export const ViewCoursesTable = class ViewCoursesTable extends React.Component {
 			<div>
 				<Table celled>
 					<Table.Header>
-						<Table.Row textAlign='center'>
+						<Table.Row textAlign="center">
 							<Table.HeaderCell>Name</Table.HeaderCell>
 							<Table.HeaderCell>Price</Table.HeaderCell>
 							<Table.HeaderCell>Category</Table.HeaderCell>
@@ -176,7 +176,7 @@ export const ViewCoursesTable = class ViewCoursesTable extends React.Component {
 						</Table.Row>
 					</Table.Header>
 					<Table.Body>
-					{course.length > 0 ? course : <h1 align='center'>No Courses to show</h1> }
+						{course.length > 0 ? course : <h1 align="center">No Courses to show</h1> }
 					</Table.Body>
 				</Table>
 			</div>
