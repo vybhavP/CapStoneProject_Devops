@@ -2,7 +2,11 @@
 import React from "react";
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { Form, Button } from "semantic-ui-react";
+import {
+	Form,
+	Button,
+	Label
+} from "semantic-ui-react";
 import { bake_cookie } from "sfcookies";
 
 const cookie_key = "Users";
@@ -20,41 +24,34 @@ class UserSingup extends Component {
 		};
 	}
 
-	//handleChange = (e, { value }) => this.setState({ value })
-
 	handleFirstNameChange = (firstname) => {
 		this.setState({ 
 			firstname: firstname.target.value 
 		});
-		// console.log(this.state.firstname);
 	}
 
 	handleLastNameChange = (lastname) => {
 		this.setState({ 
 			lastname: lastname.target.value 
 		});
-		// console.log(this.state.lastname);
 	}
 
 	handlePasswordChange = (password) => {
 		this.setState({ 
 			password: password.target.value 
 		});
-		// console.log(this.state.password);
 	}
 
 	handleConfirmPasswordChange = (confirmPassword) => {
 		this.setState({ 
 			confirmPassword: confirmPassword.target.value 
 		});
-		// console.log(this.state.confirmPassword);
 	}
 
 	handleEmailChange = (email) => {
 		this.setState({ 
 			email: email.target.value 
 		});
-		// console.log(this.state.email);
 	}
 
 	handleSignup = () => {
@@ -78,14 +75,6 @@ class UserSingup extends Component {
 	}
 
 	clearFormValues = () => {
-    
-		// this.setState({ 
-		// 	firstname: "", 
-		// 	lastname: "", 
-		// 	password: "", 
-		// 	confirmPassword: "", 
-		// 	email:  "" 
-		// });
 		this.setState({ users: []});
 		ReactDOM.findDOMNode(this.refs.firstname).focus();
 	}
@@ -96,14 +85,25 @@ class UserSingup extends Component {
 					ref="signup_form" 
 					onSubmit={this.handleSignup.bind(this)}
 				>
-					<Form.Field>
+					<Form.Field inline>
 						<label>First Name</label>
+						
 						<input 
 							placeholder="First Name" 
 							type="text" 
-							name="firstName" value={this.state.firstname} ref="firstname" onChange={this.handleFirstNameChange.bind(this)} minLength= "3" maxLength= "20" required/>
+							name="firstName" 
+							value={this.state.firstname} 
+							ref="firstname" 
+							onChange={this.handleFirstNameChange.bind(this)} 
+							minLength= "3" 
+							maxLength= "20" 
+							required
+						/>
+						<Label basic color='red' pointing='left' className="hidden">
+							username must be of 3 characters or more
+						</Label>
 					</Form.Field>
-					<Form.Field>
+					<Form.Field inline>
 						<label>Last Name</label>
 						<input 
 							placeholder="Last Name" 
@@ -117,7 +117,7 @@ class UserSingup extends Component {
 							required
 						/>
 					</Form.Field>
-					<Form.Field>
+					<Form.Field inline>
 						<label>Password</label>
 						<input 
 							placeholder="Password" 
@@ -131,7 +131,7 @@ class UserSingup extends Component {
 							required
 						/>
 					</Form.Field>
-					<Form.Field>
+					<Form.Field inline>
 						<label>Confirm Password</label>
 						<input 
 							placeholder="Confirm Password" 
@@ -145,7 +145,7 @@ class UserSingup extends Component {
 							required
 						/>
 					</Form.Field>
-					<Form.Field>
+					<Form.Field inline>
 						<label>EmailID</label>
 						<input 
 							placeholder="Email" 

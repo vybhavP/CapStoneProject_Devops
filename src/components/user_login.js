@@ -1,7 +1,14 @@
 /*eslint-disable no-unused-vars*/
 import React from "react";
 import ReactDOM from "react-dom";
-import { Button, Form, Divider } from "semantic-ui-react";
+import {
+	Button,
+	Form,
+	Divider,
+	Input,
+	Icon,
+	Checkbox
+} from "semantic-ui-react";
 import { read_cookie } from "sfcookies";
 
 const cookie_key = "Users";
@@ -19,7 +26,6 @@ export default class Login extends React.Component {
 	}
 	componentDidMount = () => {
 		this.setState({ users: read_cookie(cookie_key) });
-		// console.log(read_cookie(cookie_key));
 		// delete_cookie(cookie_key);
 	}
 	handleEmailChange = (email) => {
@@ -33,7 +39,6 @@ export default class Login extends React.Component {
 		});
 	}
 	handlePasswordChange = (password) => {
-		// console.log(password.target.value);
 		this.setState({ 
 			password: password.target.value 
 		});
@@ -43,13 +48,11 @@ export default class Login extends React.Component {
 		const { email, password, users } = this.state;
 		if(this.state.users.length){
 			for( let i = 0; i< this.state.users.length; i++){
-				// 	console.log(this.state.users[i].firstName)
 				if (email === users[i].email && password === users[i].password) {
 					this.props.history.push("/user_home");
 					this.setState({ 
 						isLoginFailed: false 
 					});
-					// console.log("isLoginFailed success: " + this.state.isLoginFailed);
 				}
 				else {
 					alert("please signup and then signin if you dont have an account");
@@ -86,7 +89,7 @@ export default class Login extends React.Component {
 				);
 			}
 		}
-		if(existingUser){
+		if(existingUser) {
 			alert(this.state.returnForgotPassword);
 		}
 		else{
@@ -107,43 +110,57 @@ export default class Login extends React.Component {
 				>
 					<Form.Field>
 						<label>Email</label>
-						<input 
+						<Input 
 							placeholder="email" 
 							type="email" 
 							name="email" 
 							value={this.state.email} 
 							onChange={this.handleEmailChange.bind(this)} 
 							ref="email" 
-						/>
+							iconPosition = 'left'
+						>
+							<Icon name = 'at' color="green"/>
+							<input/>
+						</Input>
 					</Form.Field>
 					<Form.Field>
 						<label>Password</label>
-						<input 
+						<Input 
 							placeholder="Password" 
 							type="password" 
 							name="Password" 
 							value={this.state.password} 
 							onChange={this.handlePasswordChange.bind(this)} 
 							ref="password" 
-						/>
+							iconPosition = 'left'
+						>
+							<Icon name = 'user secret' color = "teal" />
+							<input />
+						</Input>
 					</Form.Field>
-					{/* <Form.Field>
-            <Checkbox label="I agree to the Terms and Conditions" />
-          </Form.Field> */}
+					<Form.Field>
+						<Checkbox label="I agree to the Terms and Conditions" />
+					</Form.Field>
 					<Button 
 						type="submit" 
 						ref="submitButton" 
 						color="purple"
+						animated
 					>
-						Submit
+						<Button.Content visible>Submit</Button.Content>
+						<Button.Content hidden>Submit</Button.Content>
 					</Button>
 					<Button 
 						type="reset" 
 						ref="resetButton" 
 						onClick={this.clearFormValues.bind(this)} 
 						color="grey"
+						animated="vertical"
 					>
-            Reset
+						<Button.Content visible>Reset</Button.Content>
+						<Button.Content hidden>
+							Reset
+						</Button.Content>
 					</Button>
 				</Form>
 				<Divider horizontal>Forgot Password?</Divider>
@@ -155,24 +172,25 @@ export default class Login extends React.Component {
 					>
 						<Form.Field>
 							<label>Email</label>
-							<input 
+							<Input 
 								placeholder="email" 
-								type="email" 
+								type="Enter password recovery Email" 
 								name="forgotEmail" 
 								value={this.state.forgotEmail} 
 								onChange={this.handleForgotEmailChange.bind(this)} 
 								ref="forgotEmail" 
-							/>
+								iconPosition = 'left'
+							>
+								<Icon name = 'at' color="red"/>
+								<input/>
+							</Input>
 						</Form.Field>
-						<Button 
-							type="submit"
-							color="teal"
-						>
-							get Password
+						<Button type="submit" color="teal" animated = "fade">
+							<Button.Content visible>get Password</Button.Content>
+							<Button.Content hidden>get Password</Button.Content>							
 						</Button>
 					</Form>
 				</div>
-				
 			</div>
 		);
 	}
