@@ -2,7 +2,11 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import { AddCoursesTable, DeleteCoursesTable, UpdateCoursesTable, ViewCoursesTable } from "./CoursesTable";
 import { bake_cookie, read_cookie } from "sfcookies";
-import { Button, Modal } from "semantic-ui-react";
+import {
+	Button,
+	Modal,
+	Container
+} from "semantic-ui-react";
 const cookie_key = "Courses";
 
 export const AddCourses =  class AddCourses extends React.Component {
@@ -88,27 +92,29 @@ export const AddCourses =  class AddCourses extends React.Component {
 		const { open, size } = this.state;
 		return (
 			<div>
-				<SearchBar 
-					filterText={this.state.filterText} 
-					onUserInput={this.handleUserInput.bind(this)} 
-				/>
-				<AddCoursesTable 
-					onAddCoursesTableUpdate={this.handleAddCoursesTable.bind(this)} 
-					onRowAdd={this.handleAddEvent.bind(this)} 
-					onRowDel={this.handleRowDel.bind(this)} 
-					courses={this.state.courses} 
-					filterText={this.state.filterText} 
-					onSave={this.handleSave.bind(this)} 
-				/>
-				<Modal size={size} open={open} onClose={this.close} style ={{ marginLeft:450, marginTop:50 }}>
-					<Modal.Header>Success</Modal.Header>
-					<Modal.Content>
-						<p>Saved Courses successfully</p>
-					</Modal.Content>
-					<Modal.Actions>
-						<Button onClick={this.close} positive abelPosition="right" content="Ok"/>
-					</Modal.Actions>
-				</Modal>
+				<Container>
+					<SearchBar 
+						filterText={this.state.filterText} 
+						onUserInput={this.handleUserInput.bind(this)} 
+					/>
+					<AddCoursesTable 
+						onAddCoursesTableUpdate={this.handleAddCoursesTable.bind(this)} 
+						onRowAdd={this.handleAddEvent.bind(this)} 
+						onRowDel={this.handleRowDel.bind(this)} 
+						courses={this.state.courses} 
+						filterText={this.state.filterText} 
+						onSave={this.handleSave.bind(this)} 
+					/>
+					<Modal size={size} open={open} onClose={this.close} style ={{ marginLeft:450, marginTop:50 }}>
+						<Modal.Header>Success</Modal.Header>
+						<Modal.Content>
+							<p>Saved Courses successfully</p>
+						</Modal.Content>
+						<Modal.Actions>
+							<Button onClick={this.close} positive abelPosition="right" content="Ok"/>
+						</Modal.Actions>
+					</Modal>
+				</Container>
 			</div>
 		);}
 };
@@ -159,17 +165,19 @@ export const DeleteCourses = class DeleteCourses extends React.Component {
 	render() {
 		return (
 			<div>
-				<SearchBar 
-					filterText={this.state.filterText} 
-					onUserInput={this.handleUserInput.bind(this)} 
-				/>
-				<DeleteCoursesTable 
-					onDeleteCoursesTableUpdate={this.handleDeleteCoursesTable.bind(this)} 
-					onRowDel={this.handleRowDel.bind(this)} 
-					courses={this.state.courses} 
-					filterText={this.state.filterText} 
-					enableSave={this.state.isDeleted} 
-				/>
+				<Container>
+					<SearchBar 
+						filterText={this.state.filterText} 
+						onUserInput={this.handleUserInput.bind(this)} 
+					/>
+					<DeleteCoursesTable 
+						onDeleteCoursesTableUpdate={this.handleDeleteCoursesTable.bind(this)} 
+						onRowDel={this.handleRowDel.bind(this)} 
+						courses={this.state.courses} 
+						filterText={this.state.filterText} 
+						enableSave={this.state.isDeleted} 
+					/>
+				</Container>
 			</div>
 		);
 	}
@@ -221,26 +229,28 @@ export const UpdateCourses = class UpdateCourses extends React.Component {
 		const { open, size } = this.state;
 		return (
 			<div>
-				<SearchBar 
-					filterText={this.state.filterText} 
-					onUserInput={this.handleUserInput.bind(this)}
-				/>
-				<UpdateCoursesTable 
-					onUpdateCoursesTableUpdate={this.handleUpdateCoursesTable.bind(this)} 
-					nRowDel={this.handleRowDel.bind(this)} 
-					courses={this.state.courses} 
-					filterText={this.state.filterText}
-					saveUpdatedCourses = {this.handleSaveUpdatedCourses.bind(this)}
-				/>
-				<Modal size={size} open={open} onClose={this.close} style ={{ marginLeft:450, marginTop:50 }}>
-					<Modal.Header>Success</Modal.Header>
-					<Modal.Content>
-						<p>Updated Courses successfully</p>
-					</Modal.Content>
-					<Modal.Actions>
-						<Button onClick={this.close} positive abelPosition="right" content="Ok"/>
-					</Modal.Actions>
-				</Modal>
+				<Container>
+					<SearchBar 
+						filterText={this.state.filterText} 
+						onUserInput={this.handleUserInput.bind(this)}
+					/>
+					<UpdateCoursesTable 
+						onUpdateCoursesTableUpdate={this.handleUpdateCoursesTable.bind(this)} 
+						nRowDel={this.handleRowDel.bind(this)} 
+						courses={this.state.courses} 
+						filterText={this.state.filterText}
+						saveUpdatedCourses = {this.handleSaveUpdatedCourses.bind(this)}
+					/>
+					<Modal size={size} open={open} onClose={this.close} style ={{ marginLeft:450, marginTop:50 }}>
+						<Modal.Header>Success</Modal.Header>
+						<Modal.Content>
+							<p>Updated Courses successfully</p>
+						</Modal.Content>
+						<Modal.Actions>
+							<Button onClick={this.close} positive abelPosition="right" content="Ok"/>
+						</Modal.Actions>
+					</Modal>
+				</Container>
 			</div>
 		);}
 };
@@ -291,17 +301,19 @@ export const ViewCourses = class ViewCourses extends React.Component {
 	render() {
 		return (
 			<div>
-				<SearchBar 
-					filterText={this.state.filterText} 
-					onUserInput={this.handleUserInput.bind(this)} 
-				/>
-				<ViewCoursesTable 
-					onViewCoursesTableUpdate={this.handleViewCoursesTable.bind(this)} 
-					onRowDel={this.handleRowDel.bind(this)} 
-					courses={this.state.courses} 
-					filterText={this.state.filterText} 
-					enableSave={this.state.isDeleted} 
-				/>
+				<Container>
+					<SearchBar 
+						filterText={this.state.filterText} 
+						onUserInput={this.handleUserInput.bind(this)} 
+					/>
+					<ViewCoursesTable 
+						onViewCoursesTableUpdate={this.handleViewCoursesTable.bind(this)} 
+						onRowDel={this.handleRowDel.bind(this)} 
+						courses={this.state.courses} 
+						filterText={this.state.filterText} 
+						enableSave={this.state.isDeleted} 
+					/>
+				</Container>
 			</div>
 		);
 	}
