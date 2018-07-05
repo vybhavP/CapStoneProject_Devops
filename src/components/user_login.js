@@ -106,16 +106,17 @@ export default class Login extends React.Component {
 	}
 
 	handleForgotPassword = () => {
+		let { forgotEmail, returnForgotPassword } = this.state;
 		const listOfUsers = read_cookie(cookie_key);
 		let existingUser = false;
 		for (var i = 0; i < listOfUsers.length; i++) {
-			if (listOfUsers[i].email === this.state.forgotEmail) {
+			if (listOfUsers[i].email === forgotEmail) {
 				existingUser = true;
 				this.setState({ returnForgotPassword: listOfUsers[i].password });
 			}
 		}
 		if (existingUser) {
-			alert(this.state.returnForgotPassword);
+			alert(returnForgotPassword);
 		}
 		else {
 			alert("No user found, please try with correct email ID");
@@ -145,12 +146,17 @@ export default class Login extends React.Component {
 		
 	}
 	render() {
+		let {
+			isSignedUp,
+			email,
+			password
+		} = this.state;
 		return (
 			<div>
 				<Container>
 
 					{
-						this.state.isSignedUp ? this.showHideSuccessSignup(true) : this.showHideSuccessSignup(false)
+						isSignedUp ? this.showHideSuccessSignup(true) : this.showHideSuccessSignup(false)
 					}
 
 					<Form
@@ -174,7 +180,7 @@ export default class Login extends React.Component {
 												placeholder="email"
 												type="email"
 												name="email"
-												value={this.state.email}
+												value={email}
 												onChange={this.handleEmailChange.bind(this)}
 												ref="email"
 												iconPosition="left"
@@ -204,7 +210,7 @@ export default class Login extends React.Component {
 												placeholder="Password"
 												type="password"
 												name="Password"
-												value={this.state.password}
+												value={password}
 												onChange={this.handlePasswordChange.bind(this)}
 												ref="password"
 												iconPosition="left"
