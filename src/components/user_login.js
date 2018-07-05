@@ -31,9 +31,9 @@ export default class Login extends React.Component {
 		this.setState({
 			users: read_cookie(cookie_key),
 		});
-		if (this.props.location.state){
+		if (this.props.location.state) {
 			this.setState({
-				isSignedUp: this.props.location.state.isSignedUp
+				isSignedUp: this.props.location.state.isSignedUp,
 			});
 		}
 		else{

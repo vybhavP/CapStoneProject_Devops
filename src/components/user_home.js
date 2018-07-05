@@ -16,7 +16,6 @@ export default class Login extends React.Component {
 		};
 	}
 	componentDidMount  = () => {
-		alert(this.props.location.state.isLoggedIn);
 		if (this.props.location.state) {
 			this.setState({
 				isLoggedIn: this.props.location.state.isLoggedIn
