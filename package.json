@@ -28,7 +28,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lintAndbuild": "node_modules/.bin/eslint src/components && react-scripts build"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
@@ -43,5 +44,6 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended"
-  ]
+  ],
+  "parser": "babel-eslint"
 }

@@ -1,7 +1,0 @@
-sonar.projectKey=vybhav:capstone
-
-sonar.projectName=capstone
-
-sonar.sourceEncoding=UTF-8
-
-sonar.javascript.file.suffixes=.js,.jsx
