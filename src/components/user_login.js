@@ -3,10 +3,8 @@ import ReactDOM from "react-dom";
 import {
 	Button,
 	Form,
-	Divider,
 	Input,
 	Icon,
-	Checkbox,
 	Grid
 } from "semantic-ui-react";
 import { read_cookie } from "sfcookies";

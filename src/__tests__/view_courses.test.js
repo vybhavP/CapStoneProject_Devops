@@ -10,7 +10,6 @@ configure({ adapter: new Adapter() });
 describe("<view_courses />", () =>{
 	it("view courses", ()=>{
 		const viewCoursesComponent = shallow(<view_courses />);
-		console.log(viewCoursesComponent);
 		expect(viewCoursesComponent).toHaveLength(1);
 	});
 });

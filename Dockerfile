@@ -5,7 +5,7 @@
 FROM node:8.11.3
 
 ### The base node image sets a very verbose log level ###
-ENV NPM_CONFIG_LOGLEVEL warn
+# ENV NPM_CONFIG_LOGLEVEL warn
 
 ### setting HTTP & HTTPS proxy ###
 RUN npm config set http-proxy http://vy323647:vahbiavP%402@proxy4.wipro.com:8080
@@ -19,7 +19,7 @@ ENV HTTPS_PROXY "https://vy323647:vahbiavP%402proxy4.wipro.com:8080"
 #RUN npm cache clean
 
 ### copy package.json file ###
-COPY package.json package.json
+# COPY package.json package.json
 
 ### set registry for npm ###
 RUN npm config set registry=http://registry.npmjs.org/
@@ -34,13 +34,16 @@ RUN npm config set registry=http://registry.npmjs.org/
 # RUN npm install --save
 
 # Install 'serve' to serve the application ###
-RUN npm install -g serve
+# RUN npm install -g serve
 
 ### Copy all local files into the image ###
 COPY . .
 
 ### Build for production ###
-RUN npm run build --production
+# RUN npm run build --production
+
+# run testcases if success then build
+RUN npm run lintAndbuild
 
 ### Set the command to start the node server ###
 CMD serve -s build
