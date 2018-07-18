@@ -7,6 +7,9 @@
   - name: install node modules
     shell: cd {{ app_home }} && echo "osg@1234" sudo -S /usr/local/bin/npm install --save
 
+  - name: Run unit testcases
+    shell: cd {{ app_home }} && echo "osg@1234" sudo -S /usr/local/bin/npm test
+
   - name: create build for production
     shell: cd {{ app_home }} && echo "osg@1234" sudo -S /usr/local/bin/npm run lintAndbuild
 

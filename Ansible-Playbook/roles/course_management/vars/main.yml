@@ -1,4 +1,4 @@
 ---
 # vars file for ./roles/course_management
 
-app_home: /home/osgdev/vaibhav/capstone
+app_home: /var/lib/jenkins/workspace/capstone_devops

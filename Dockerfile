@@ -16,10 +16,10 @@ ENV HTTP_PROXY "http://vy323647:vahbiavP%402@proxy4.wipro.com:8080"
 ENV HTTPS_PROXY "https://vy323647:vahbiavP%402proxy4.wipro.com:8080"
 
 ### clear npm cache ###
-#RUN npm cache clean
+# RUN npm cache clean
 
 ### copy package.json file ###
-# COPY package.json package.json
+COPY package.json package.json
 
 ### set registry for npm ###
 RUN npm config set registry=http://registry.npmjs.org/
@@ -28,13 +28,13 @@ RUN npm config set registry=http://registry.npmjs.org/
 #RUN npm config set strict-ssl false
 
 ### Remove node_modules ###
-# RUN rm -rf node_modules
+RUN rm -rf node_modules
 
 ### install node_modules ###
-# RUN npm install --save
+RUN npm install --save
 
 # Install 'serve' to serve the application ###
-# RUN npm install -g serve
+RUN npm install -g serve
 
 ### Copy all local files into the image ###
 COPY . .

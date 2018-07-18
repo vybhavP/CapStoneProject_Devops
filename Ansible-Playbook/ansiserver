@@ -6,5 +6,5 @@
 
 [local]
 localhost ansible_connection=local
-TG-DevOps-OS069 hostname=127.0.1.1 ansible_ssh_user=osgdev
-TG-DevOps-OS069.wipro.com hostname=127.0.1.1 ansible_ssh_user=osgdev
+//TG-DevOps-OS069 hostname=127.0.1.1 ansible_ssh_user=osgdev
+//TG-DevOps-OS069.wipro.com hostname=127.0.1.1 ansible_ssh_user=osgdev
